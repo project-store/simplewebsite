@@ -2,6 +2,7 @@
 /logs
 /.idea
 /.idea/*
+.idea/*
 .project
 .classpath
 simplewebsite.iml
