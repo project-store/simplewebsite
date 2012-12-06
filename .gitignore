@@ -1,2 +1,7 @@
 /target
 /logs
+/.idea
+/.idea/*
+.project
+.classpath
+simplewebsite.iml
