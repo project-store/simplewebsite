@@ -8,9 +8,6 @@ import java.io.IOException;
 /**
  * Created with IntelliJ IDEA.
  * User: xiaohao
- * Date: 12-12-3
- * Time: 下午6:17
- * To change this template use File | Settings | File Templates.
  */
 public class PostUtil {
     public static String doPost(String url2,NameValuePair[] data){
