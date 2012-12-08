@@ -1,7 +1,1 @@
-simplewebsite
-=========================================
-                                        =
-xiaohao                                 =
-=========================================
-
-simple web site
+simple ssh web project
