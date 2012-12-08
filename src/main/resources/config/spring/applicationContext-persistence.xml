@@ -50,11 +50,6 @@
             <value>true</value>
         </property>
 
-		 <property name="annotatedClasses">
-            <list>
-			<value>com.xiaohao.base.model.User</value>
-			</list>
-	    </property>
 	</bean>
 
 	<!-- 配置事务管理 -->
