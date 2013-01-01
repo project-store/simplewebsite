@@ -9,7 +9,7 @@ import javax.persistence.Table;
  * Time: 下午2:28.
  */
 @Entity
-@Table(name="")
+@Table(name="ProductCategory")
 public class ProductCategory extends BaseModel {
     private Long productCateId;
     private String productCateName;
