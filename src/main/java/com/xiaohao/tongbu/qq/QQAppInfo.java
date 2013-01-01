@@ -1,11 +1,9 @@
 package com.xiaohao.tongbu.qq;
 
 /**
- * Created with IntelliJ IDEA.
  * User: xiqohao
  * Date: 12-12-8
  * Time: 下午3:12
- * To change this template use File | Settings | File Templates.
  */
 public class QQAppInfo {
     public static String appKey="801064960";
