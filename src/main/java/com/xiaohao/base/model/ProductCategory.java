@@ -1,7 +1,6 @@
 package com.xiaohao.base.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * User: xiqohao
@@ -14,7 +13,9 @@ public class ProductCategory extends BaseModel {
     private Long productCateId;
     private String productCateName;
     private Integer cateSort;
-
+    @Id
+    @Column(name="productCateId")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getProductCateId() {
         return productCateId;
     }
@@ -22,7 +23,7 @@ public class ProductCategory extends BaseModel {
     public void setProductCateId(Long productCateId) {
         this.productCateId = productCateId;
     }
-
+    @Column(name="productCateName")
     public String getProductCateName() {
         return productCateName;
     }
@@ -30,7 +31,7 @@ public class ProductCategory extends BaseModel {
     public void setProductCateName(String productCateName) {
         this.productCateName = productCateName;
     }
-
+    @Column(name="cateSort")
     public Integer getCateSort() {
         return cateSort;
     }
