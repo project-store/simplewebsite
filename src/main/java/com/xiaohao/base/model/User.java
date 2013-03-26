@@ -14,6 +14,9 @@ import javax.persistence.*;
 public class User extends BaseModel {
     private Long userId;
     private String userName;
+    private String realName;
+    private String mobile;
+    private String goodWish;
 
     @Id
     @Column(name="userId")

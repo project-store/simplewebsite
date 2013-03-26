@@ -1,1 +1,1 @@
-<% response.sendRedirect("application/modules/demo/index.jsp"); %>
+<% response.sendRedirect("indexAction!index"); %>

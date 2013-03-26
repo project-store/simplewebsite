@@ -22,4 +22,6 @@
 	<constant name="struts.action.extension" value="do,action,jhtml,," />
 	<!-- Struts Annotation -->
 	<constant name="actionPackages" value="com.xiaohao" />
+    <package name="web_front"  extends="json-default"/>
+    <constant name="struts.configuration.classpath.defaultParentPackage" value="web_front" />
 </struts>

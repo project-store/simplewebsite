@@ -254,8 +254,36 @@
         </dependency>
 	</dependencies>
 	<properties>
+        <repos.root.url>http://192.168.6.115/nexus</repos.root.url>
 		<struts.version>2.3.1.2</struts.version>
 		<hibernate.version>3.6.8.Final</hibernate.version>
 		<spring.version>3.1.0.RELEASE</spring.version>
 	</properties>
+    <distributionManagement>
+        <repository>
+            <id>vansky-nexus</id>
+            <name>Nexus Release Repository</name>
+            <url>${repos.root.url}/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>vansky-nexus</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>${repos.root.url}/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>vansky-nexus</id>
+            <name>Vansky Nexus Public Repository Group</name>
+            <url>${repos.root.url}/content/groups/public</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>vansky-nexus</id>
+            <name>Vansky Nexus Public Repository Group</name>
+            <url>${repos.root.url}/content/groups/public</url>
+        </pluginRepository>
+    </pluginRepositories>
 </project>
