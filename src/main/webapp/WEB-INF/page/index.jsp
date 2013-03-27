@@ -22,24 +22,7 @@
 </head>
 <body>
 <div id="wrap">
-  <div id="header">
-    <div class="logo"><a href="#"><img src="images/name.png" alt="" /></a></div>
-    <!--end logo-->
-    <div class="subtitle"><img src="images/subtitle.png" alt="" /></div>
-    <!--end subtitle-->
-    <div id="nav">
-      <ul id="nav-pages">
-        <li><a href="index.jsp" class="current">Home</a><span>~</span></li>
-        <li><a href="short-bio.html">Short Bio</a><span>~</span></li>
-        <li><a href="articles.html">Articles</a><span>~</span></li>
-        <li><a href="contact.jsp">Contact Me</a><span>~</span></li>
-          <li><a href="bestWishAction!init">Contact Me</a><span>~</span></li>
-        <li><a href="contact.jsp">Contact Me</a></li>
-      </ul>
-      <!--end nav-pages-->
-    </div>
-    <!--end nav-->
-  </div>
+    <jsp:include page="common/header.jsp"></jsp:include>
   <!--end header-->
   <div id="frontpage-content">
     <div id="container">
@@ -69,10 +52,13 @@
     <!--end navigation-containter-->
   </div>
   <!--end frontpage-content-->
-  <div id="footer">
+    <!--
+    <div id="footer">
     <div class="footer-line"></div>
     <p class="copyright">Copyright &copy; <a href="#">Domain Name</a> - All Rights Reserved / Design By <a target="_blank" href="http://www.chris-creed.com/">Chris Creed</a></p>
   </div>
+  -->
+    <jsp:include page="common/footer.jsp"></jsp:include>
   <!--end footer-->
 </div>
 <!--end wrap-->
