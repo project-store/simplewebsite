@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Juma</title>
+<title>小郝和小丽结婚啦~O(∩_∩)O哈哈~</title>
 <meta charset="utf-8">
 <link type="text/css" rel="stylesheet" href="styles/galleriffic.css"/>
 <link type="text/css" rel="stylesheet" href="styles/style.css" />
@@ -32,6 +32,8 @@
         <li><a href="index.jsp" class="current">Home</a><span>~</span></li>
         <li><a href="short-bio.html">Short Bio</a><span>~</span></li>
         <li><a href="articles.html">Articles</a><span>~</span></li>
+        <li><a href="contact.html">Contact Me</a><span>~</span></li>
+          <li><a href="contact.html">Contact Me</a><span>~</span></li>
         <li><a href="contact.html">Contact Me</a></li>
       </ul>
       <!--end nav-pages-->
