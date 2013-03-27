@@ -19,10 +19,12 @@ import org.springframework.stereotype.Controller;
 @ParentPackage("web_front")
 @Scope("prototype")
 @Actions({ @Action(value = ( "/bestWishAction" ), results = {
-        @Result(name = "index", location = "/WEB-INF/page/index.jsp"),
+        @Result(name = "init", location = "/WEB-INF/page/contact.jsp"),
         @Result(name = "tb_posordergather_list", location = "/WEB-INF/pages/tb_posordergather_list.jsp"),
         @Result(name = "list", type = "json", params = { "root", "entityListJson" }),
         @Result(name = "ajaxPromise", type = "json", params = { "root", "entityJson" }) }) })
 public class BestWishAction extends BaseAction {
-
+    public String init(){
+        return "init";
+    }
 }

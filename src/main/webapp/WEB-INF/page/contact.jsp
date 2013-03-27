@@ -1,3 +1,6 @@
+<%@include file="common/taglibs.jsp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,8 +27,8 @@
         <li><a href="index.jsp">Home</a><span>~</span></li>
         <li><a href="short-bio.html">Short Bio</a><span>~</span></li>
         <li><a href="articles.html">Articles</a><span>~</span></li>
-          <li><a href="contact.html">Contact Me</a><span>~</span></li>
-        <li><a href="contact.html" class="current">Contact Me</a></li>
+          <li><a href="contact.jsp">Contact Me</a><span>~</span></li>
+        <li><a href="contact.jsp" class="current">Contact Me</a></li>
       </ul>
       <!--end nav-pages-->
     </div>
