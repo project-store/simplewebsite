@@ -11,18 +11,16 @@ import org.springframework.stereotype.Controller;
  * Created with IntelliJ IDEA.
  * User: SuperHao
  * Date: 13-3-27
- * Time: 下午6:42
+ * Time: 下午6:44
  * To change this template use File | Settings | File Templates.
  */
 @Controller
 @ParentPackage("web_front")
 @Scope("prototype")
-@Actions({ @Action(value = ( "/headerAction" ), results = {
-        @Result(name = "init", location = "/WEB-INF/page/common/header.jsp"),
+@Actions({ @Action(value = ( "/newsAction" ), results = {
+        @Result(name = "index", location = "/WEB-INF/page/index.jsp"),
+        @Result(name = "tb_posordergather_list", location = "/WEB-INF/pages/tb_posordergather_list.jsp"),
         @Result(name = "list", type = "json", params = { "root", "entityListJson" }),
         @Result(name = "ajaxPromise", type = "json", params = { "root", "entityJson" }) }) })
-public class HeaderAction {
-     public String init(){
-         return "init";
-     }
+public class NewsAction {
 }
