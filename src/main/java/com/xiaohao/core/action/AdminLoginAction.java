@@ -11,30 +11,20 @@ import org.springframework.stereotype.Controller;
 /**
  * Created with IntelliJ IDEA.
  * User: SuperHao
- * Date: 13-3-26
- * Time: 下午6:04
+ * Date: 13-3-28
+ * Time: 下午12:46
  * To change this template use File | Settings | File Templates.
  */
 @Controller
-@ParentPackage("web_front")
+@ParentPackage("web_admin")
 @Scope("prototype")
-@Actions({ @Action(value = ( "/indexAction" ), results = {
-        @Result(name = "index", location = "/WEB-INF/page/admin.jsp"),
+@Actions({ @Action(value = ( "/adminLoginAction" ), results = {
+        @Result(name = "init", location = "/WEB-INF/admin/admin.jsp"),
         @Result(name = "tb_posordergather_list", location = "/WEB-INF/pages/tb_posordergather_list.jsp"),
         @Result(name = "list", type = "json", params = { "root", "entityListJson" }),
         @Result(name = "ajaxPromise", type = "json", params = { "root", "entityJson" }) }) })
-public class IndexAction extends BaseAction {
-    private String flag;
-    public String index(){
-        flag="index";
-        return "index";
-    }
-
-    public String getFlag() {
-        return flag;
-    }
-
-    public void setFlag(String flag) {
-        this.flag = flag;
-    }
+public class AdminLoginAction extends BaseAction {
+      public String init(){
+          return "init";
+      }
 }

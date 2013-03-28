@@ -24,4 +24,6 @@
 	<constant name="actionPackages" value="com.xiaohao" />
     <package name="web_front"  extends="json-default"/>
     <constant name="struts.configuration.classpath.defaultParentPackage" value="web_front" />
+    <package name="web_admin"  extends="json-default"/>
+    <constant name="struts.configuration.classpath.defaultParentPackage" value="web_admin" />
 </struts>
