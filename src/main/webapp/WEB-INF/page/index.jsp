@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>小郝和小丽结婚啦~O(∩_∩)O哈哈~</title>
+<title>小郝和小丽结婚啦~O(∩_∩)O哈哈~ |首页</title>
 <meta charset="utf-8">
 <link type="text/css" rel="stylesheet" href="styles/galleriffic.css"/>
 <link type="text/css" rel="stylesheet" href="styles/style.css" />

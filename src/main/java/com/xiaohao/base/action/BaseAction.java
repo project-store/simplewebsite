@@ -1,7 +1,5 @@
 package com.xiaohao.base.action;
 
-import com.xiaohao.base.model.PageModel;
-import com.xiaohao.base.model.ResponseModel;
 
 import java.util.Map;
 
@@ -30,7 +28,6 @@ public class BaseAction extends ActionSupport implements ServletContextAware, Se
 
 	protected Logger logger = LoggerFactory.getLogger(getClass());
 
-	private ResponseModel responseModel = new ResponseModel();
 
 	protected ServletContext servletContext;
 
@@ -41,14 +38,6 @@ public class BaseAction extends ActionSupport implements ServletContextAware, Se
 	protected HttpSession httpSession;
 
 	protected Map<String, Object> session;
-
-	public ResponseModel getResponseModel() {
-		return responseModel;
-	}
-
-	public void setResponseModel(ResponseModel responseModel) {
-		this.responseModel = responseModel;
-	}
 
 	@Override
 	public void setServletContext(ServletContext context) {
@@ -71,27 +60,5 @@ public class BaseAction extends ActionSupport implements ServletContextAware, Se
 		this.session = session;
 	}
 
-	public String responseModel(Object data) {
-		responseModel.setData(data);
-		return ActionSupport.SUCCESS;
-	}
 
-	public String responseModel(Object data, PageModel pagination) {
-		responseModel.setData(data);
-		responseModel.setPagination(pagination);
-		return ActionSupport.SUCCESS;
-	}
-
-	public String responseModel(Object data, PageModel pagination, String message) {
-		responseModel.setData(data);
-		responseModel.setMessage(message);
-		responseModel.setPagination(pagination);
-		return ActionSupport.SUCCESS;
-	}
-
-	public String responseModel(boolean responseState, String message) {
-		responseModel.setResponseState(responseState);
-		responseModel.setMessage(message);
-		return ActionSupport.SUCCESS;
-	}
 }

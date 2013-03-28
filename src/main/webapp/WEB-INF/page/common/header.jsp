@@ -18,7 +18,7 @@
             <li><a href="index.jsp" <c:if test="${flag eq 'index'}">class="current"</c:if>>首页</a><span>~</span></li>
             <li><a href="aboutAction!init" <c:if test="${flag eq 'about'}">class="current"</c:if>>关于</a><span>~</span></li>
             <li><a href="loveStoryAction!init" <c:if test="${flag eq 'loveStory'}">class="current"</c:if>>恋爱史</a><span>~</span></li>
-            <li><a href="newsAction!init" <c:if test="${flag eq 'news'}">class="current"</c:if>>资讯</a><span>~</span></li>
+            <li><a href="newsAction!init" <c:if test="${flag eq 'news'}">class="current"</c:if>>结婚动态</a><span>~</span></li>
             <li><a href="bestWishAction!init" <c:if test="${flag eq 'wishes'}">class="current"</c:if>>祝福</a><span>~</span></li>
             <li><a href="sendMyWishAction!init" <c:if test="${flag eq 'sendWish'}">class="current"</c:if>>送祝福</a></li>
         </ul>

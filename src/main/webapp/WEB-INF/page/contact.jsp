@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>小郝和小丽结婚啦~O(∩_∩)O哈哈~ | Contact</title>
+<title>小郝和小丽结婚啦~O(∩_∩)O哈哈~ | 送祝福</title>
 <meta charset="utf-8">
 <link type="text/css" rel="stylesheet" href="styles/style.css" />
 <script type="text/javascript" src="../../js/jquery-1.3.2.js"></script>
@@ -28,6 +28,7 @@
         <form id="contact-form" method="post" action="#">
           <fieldset>
             <input id="form_name" type="text" name="name" value="Name" onFocus="if(this.value=='Name'){this.value=''};" onBlur="if(this.value==''){this.value='Name'};" />
+              <input id="form_mobile" type="text" name="mobile" value="Mobile" onFocus="if(this.value=='Mobile'){this.value=''};" onBlur="if(this.value==''){this.value='Mobile'};" />
             <input id="form_email" type="text" name="email" value="Email" onFocus="if(this.value=='Email'){this.value=''};" onBlur="if(this.value==''){this.value='Email'};" />
             <input id="form_subject" type="text" name="subject" value="Subject" onFocus="if(this.value=='Subject'){this.value=''};" onBlur="if(this.value==''){this.value='Subject'};" />
             <textarea id="form_message" rows="10" cols="40" name="message"></textarea>

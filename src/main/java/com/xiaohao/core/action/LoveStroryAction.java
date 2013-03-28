@@ -20,7 +20,7 @@ import org.springframework.stereotype.Controller;
 @Scope("prototype")
 @Actions({ @Action(value = ( "/loveStoryAction" ), results = {
         @Result(name = "init", location = "/WEB-INF/page/lovestory.jsp"),
-        @Result(name = "tb_posordergather_list", location = "/WEB-INF/pages/tb_posordergather_list.jsp"),
+        @Result(name = "historyList", location = "/WEB-INF/page/historyList.jsp"),
         @Result(name = "list", type = "json", params = { "root", "entityListJson" }),
         @Result(name = "ajaxPromise", type = "json", params = { "root", "entityJson" }) }) })
 public class LoveStroryAction extends BaseAction {
@@ -29,7 +29,9 @@ public class LoveStroryAction extends BaseAction {
         flag="loveStory";
         return "init";
     }
-
+    public String historyList(){
+        return "historyList";
+    }
     public String getFlag() {
         return flag;
     }
