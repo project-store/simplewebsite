@@ -29,7 +29,7 @@
 		</rollingPolicy>
 	</appender>
 	<!-- Logger -->
-	<logger name="im.lich.framework" level="DEBUG"/>
+	<logger name="com.xiaohao" level="DEBUG"/>
 	<root level="INFO">
 		<appender-ref ref="console"/>
 		<appender-ref ref="logfile"/>
