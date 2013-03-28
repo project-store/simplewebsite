@@ -17,13 +17,12 @@ import org.springframework.stereotype.Controller;
 @Controller
 @ParentPackage("web_front")
 @Scope("prototype")
-@Actions({ @Action(value = ( "/footerAction" ), results = {
-        @Result(name = "init", location = "/WEB-INF/page/common/footer.jsp"),
-        @Result(name = "tb_posordergather_list", location = "/WEB-INF/pages/tb_posordergather_list.jsp"),
+@Actions({ @Action(value = ( "/sendMyWishAction" ), results = {
+        @Result(name = "init", location = "/WEB-INF/page/contact.jsp"),
         @Result(name = "list", type = "json", params = { "root", "entityListJson" }),
         @Result(name = "ajaxPromise", type = "json", params = { "root", "entityJson" }) }) })
-public class FooterAction {
-    public String init(){
-        return "init";
-    }
+public class SendMyWishAction {
+     public String init(){
+         return "init";
+     }
 }
