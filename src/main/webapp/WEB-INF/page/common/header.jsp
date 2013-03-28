@@ -14,9 +14,9 @@
     <div id="nav">
         <ul id="nav-pages">
             <li><a href="index.jsp">Home</a><span>~</span></li>
-            <li><a href="short-bio.html">Short Bio</a><span>~</span></li>
-            <li><a href="articles.html">Articles</a><span>~</span></li>
-            <li><a href="bestWishAction!init">Contact Me</a><span>~</span></li>
+            <li><a href="short-bio.html">About</a><span>~</span></li>
+            <li><a href="articles.html">News</a><span>~</span></li>
+            <li><a href="bestWishAction!init">Wishes</a><span>~</span></li>
             <li><a href="contact.jsp" class="current">Contact Me</a></li>
         </ul>
         <!--end nav-pages-->
