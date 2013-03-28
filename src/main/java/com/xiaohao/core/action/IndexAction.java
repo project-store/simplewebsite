@@ -24,8 +24,17 @@ import org.springframework.stereotype.Controller;
         @Result(name = "list", type = "json", params = { "root", "entityListJson" }),
         @Result(name = "ajaxPromise", type = "json", params = { "root", "entityJson" }) }) })
 public class IndexAction extends BaseAction {
+    private String flag;
     public String index(){
-
+        flag="index";
         return "index";
+    }
+
+    public String getFlag() {
+        return flag;
+    }
+
+    public void setFlag(String flag) {
+        this.flag = flag;
     }
 }

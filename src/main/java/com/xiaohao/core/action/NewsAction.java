@@ -18,9 +18,22 @@ import org.springframework.stereotype.Controller;
 @ParentPackage("web_front")
 @Scope("prototype")
 @Actions({ @Action(value = ( "/newsAction" ), results = {
-        @Result(name = "index", location = "/WEB-INF/page/index.jsp"),
+        @Result(name = "init", location = "/WEB-INF/page/news.jsp"),
         @Result(name = "tb_posordergather_list", location = "/WEB-INF/pages/tb_posordergather_list.jsp"),
         @Result(name = "list", type = "json", params = { "root", "entityListJson" }),
         @Result(name = "ajaxPromise", type = "json", params = { "root", "entityJson" }) }) })
 public class NewsAction {
+    private String flag;
+    public String init(){
+        flag="news";
+        return "init";
+    }
+
+    public String getFlag() {
+        return flag;
+    }
+
+    public void setFlag(String flag) {
+        this.flag = flag;
+    }
 }

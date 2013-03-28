@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="../common/taglibs.jsp"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <div id="header">
     <div class="logo"><a href="#"><img src="images/name.png" alt="" /></a></div>
     <!--end logo-->
@@ -13,11 +15,11 @@
     <!--end subtitle-->
     <div id="nav">
         <ul id="nav-pages">
-            <li><a href="index.jsp">Home</a><span>~</span></li>
-            <li><a href="aboutAction!init">About</a><span>~</span></li>
-            <li><a href="newsAction!init">News</a><span>~</span></li>
-            <li><a href="bestWishAction!init">Wishes</a><span>~</span></li>
-            <li><a href="sendMyWishAction!init" class="current">Contact Me</a></li>
+            <li><a href="index.jsp" <c:if test="${flag eq 'index'}">class="current"</c:if>>Home</a><span>~</span></li>
+            <li><a href="aboutAction!init" <c:if test="${flag eq 'about'}">class="current"</c:if>>About</a><span>~</span></li>
+            <li><a href="newsAction!init" <c:if test="${flag eq 'news'}">class="current"</c:if>>News</a><span>~</span></li>
+            <li><a href="bestWishAction!init" <c:if test="${flag eq 'wishes'}">class="current"</c:if>>Wishes</a><span>~</span></li>
+            <li><a href="sendMyWishAction!init" <c:if test="${flag eq 'sendWish'}">class="current"</c:if>>Contact Me</a></li>
         </ul>
         <!--end nav-pages-->
     </div>

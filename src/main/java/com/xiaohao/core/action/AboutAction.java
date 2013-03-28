@@ -23,7 +23,17 @@ import org.springframework.stereotype.Controller;
         @Result(name = "list", type = "json", params = { "root", "entityListJson" }),
         @Result(name = "ajaxPromise", type = "json", params = { "root", "entityJson" }) }) })
 public class AboutAction {
+    private String flag;
     public String init(){
+        flag="about";
         return "init";
+    }
+
+    public String getFlag() {
+        return flag;
+    }
+
+    public void setFlag(String flag) {
+        this.flag = flag;
     }
 }
