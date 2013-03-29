@@ -19,7 +19,7 @@ import org.springframework.stereotype.Controller;
 @ParentPackage("web_front")
 @Scope("prototype")
 @Actions({ @Action(value = ( "/indexAction" ), results = {
-        @Result(name = "index", location = "/WEB-INF/page/admin.jsp"),
+        @Result(name = "index", location = "/WEB-INF/page/index.jsp"),
         @Result(name = "tb_posordergather_list", location = "/WEB-INF/pages/tb_posordergather_list.jsp"),
         @Result(name = "list", type = "json", params = { "root", "entityListJson" }),
         @Result(name = "ajaxPromise", type = "json", params = { "root", "entityJson" }) }) })

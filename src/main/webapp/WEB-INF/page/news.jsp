@@ -67,6 +67,7 @@
         <p>I am willing to travel to meet with you to discuss your requirements. Please get in touch with me and we can arrange a suitable time to meet up.</p>
         <p>My specialties are wedding photography, flowers, and portrait photography. I have been working predominantly in these areas for over 10 years now and have lots of happy clients.</p>
       </div>
+
       <!--end author-details-->
     </div>
     <!--end sidebar-->

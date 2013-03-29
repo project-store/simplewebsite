@@ -10,8 +10,48 @@
 		<name>xiaohao</name>
 		<url>http://xiaohao.com.cn</url>
 	</organization>
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <resource.environment>dev</resource.environment>
+            </properties>
+        </profile>
+        <profile>
+            <id>sae</id>
+            <properties>
+                <resource.environment>sae</resource.environment>
+            </properties>
+        </profile>
+    </profiles>
 
-	<build>
+    <build>
+
+
+        <resources>
+            <resource>
+                <directory>../src/main/resources/${resource.environment}</directory>
+                <filtering>true</filtering>
+                <excludes>
+                    <exclude>filter/**</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources/${resource.environment}</directory>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/webapp/WEB-INF</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>web.xml</include>
+                </includes>
+                <targetPath>${project.build.directory}</targetPath>
+            </resource>
+        </resources>
 		<finalName>mywebsite</finalName>
 		<plugins>
 			<plugin>

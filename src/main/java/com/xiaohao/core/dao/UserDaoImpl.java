@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
  * Time: 下午1:22
  * To change this template use File | Settings | File Templates.
  */
-@Repository()
+@Repository
 public class UserDaoImpl  extends GenericDAOHibernateImpl<User,Long> implements UserDao{
 
 }
