@@ -18,13 +18,41 @@ import org.springframework.stereotype.Controller;
 @Controller
 @ParentPackage("web_admin")
 @Scope("prototype")
-@Actions({ @Action(value = ( "/adminLoginAction" ), results = {
+@Actions({@Action(value = ("/adminLoginAction"), results = {
         @Result(name = "init", location = "/WEB-INF/admin/admin.jsp"),
-        @Result(name = "tb_posordergather_list", location = "/WEB-INF/pages/tb_posordergather_list.jsp"),
-        @Result(name = "list", type = "json", params = { "root", "entityListJson" }),
-        @Result(name = "ajaxPromise", type = "json", params = { "root", "entityJson" }) }) })
+        @Result(name = "login", location = "/WEB-INF/pages/admin/login.jsp"),
+        @Result(name = "list", type = "json", params = {"root", "entityListJson"}),
+        @Result(name = "ajaxPromise", type = "json", params = {"root", "entityJson"})})})
 public class AdminLoginAction extends BaseAction {
-      public String init(){
-          return "init";
-      }
+    private String adminName;
+    private String adminPassword;
+
+    public String init() {
+        return "init";
+    }
+
+    public String login() {
+        return "login";
+    }
+    //后台登陆操作
+    public String adminLogin() {
+
+        return "admin";
+    }
+
+    public String getAdminName() {
+        return adminName;
+    }
+
+    public void setAdminName(String adminName) {
+        this.adminName = adminName;
+    }
+
+    public String getAdminPassword() {
+        return adminPassword;
+    }
+
+    public void setAdminPassword(String adminPassword) {
+        this.adminPassword = adminPassword;
+    }
 }
