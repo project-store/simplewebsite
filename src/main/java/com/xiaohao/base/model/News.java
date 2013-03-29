@@ -12,7 +12,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "news")
-public class News {
+public class News extends BaseModel {
     private Long newsId;
     private String newsTitle;
     private String newContent;

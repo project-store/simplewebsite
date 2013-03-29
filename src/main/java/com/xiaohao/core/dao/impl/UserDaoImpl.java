@@ -1,7 +1,8 @@
-package com.xiaohao.core.dao;
+package com.xiaohao.core.dao.impl;
 
 import com.xiaohao.base.dao.impl.GenericDAOHibernateImpl;
 import com.xiaohao.base.model.User;
+import com.xiaohao.core.dao.UserDao;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -12,6 +13,6 @@ import org.springframework.stereotype.Repository;
  * To change this template use File | Settings | File Templates.
  */
 @Repository
-public class UserDaoImpl  extends GenericDAOHibernateImpl<User,Long> implements UserDao{
+public class UserDaoImpl  extends GenericDAOHibernateImpl<User,Long> implements UserDao {
 
 }

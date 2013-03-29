@@ -12,7 +12,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name="eventCategory")
-public class EventCategory {
+public class EventCategory extends BaseModel {
     private Long eventCategoryId;
     private Long eventCategoryName;
     private Date createDate;
