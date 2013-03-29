@@ -1,5 +1,8 @@
 package com.xiaohao.core.dao;
 
+import com.xiaohao.base.dao.GenericDAO;
+import com.xiaohao.base.model.News;
+
 /**
  * Created with IntelliJ IDEA.
  * User: SuperHao
@@ -7,5 +10,5 @@ package com.xiaohao.core.dao;
  * Time: 下午3:05
  * To change this template use File | Settings | File Templates.
  */
-public interface NewsDAO {
+public interface NewsDAO extends GenericDAO<News,Long> {
 }
