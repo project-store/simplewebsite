@@ -78,7 +78,7 @@
                                width=24></TD>
             <TD><INPUT type="submit" value="" style="background-image: url('../../images/crm_17.gif');border: 0px;width: 86px;height: 48px"></TD>
             <TD><IMG height=48 alt="" src="../../images/crm_18.gif" width=21></TD>
-            <TD colSpan=2><A href="http://www.fdkjgz.com/shop/index.asp"><IMG
+            <TD colSpan=2><A href=""><IMG
                      height="48" src="../../images/crm_19.gif" width="84"
                     border="0"></A></TD>
             <TD><IMG height="48"  src="../../images/crm_20.gif" width="101"></TD>

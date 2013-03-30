@@ -42,17 +42,14 @@
 
     TABLE {
         FONT-SIZE: 12px;
-        FONT-FAMILY: tahoma, 宋 体, fantasy
+        FONT-FAMILY: tahoma,宋体,fantasy
     }
 
     TD {
         FONT-SIZE: 12px;
-        FONT-FAMILY: tahoma, 宋 体, fantasy
+        FONT-FAMILY: tahoma, 宋体, fantasy
     }
     </STYLE>
-
-    <SCRIPT language=javaScript src="../../js/admin.js"
-            type=text/javascript></SCRIPT>
 
     <SCRIPT>
         var status = 1;
@@ -138,8 +135,8 @@
                             id=dvbbsannounce
                             style="FONT-WEIGHT: bold; FLOAT: left; WIDTH: 300px; COLOR: #c00"></SPAN></TD>
                     <TD style="COLOR: #135294; TEXT-ALIGN: right"
-                        background=../../images/bg2.gif> <A href="#" target=_top>首页</A> | <A
-                                href="javascript:AdminOut()" target=_top>退出</A></TD>
+                        background=../../images/bg2.gif> <A href="indexAction!index" target=_top>首页</A> | <A
+                                href="adminLoginAction!loginOut" target=_top>退出</A></TD>
                     <TD vAlign=top align=right width=28
                         background=../../images/bg2.gif><IMG alt=""
                                                              src="../../images/teble_top_right.gif"></TD>
