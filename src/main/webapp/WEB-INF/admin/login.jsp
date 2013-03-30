@@ -76,13 +76,12 @@
                                width=127></TD>
             <TD rowSpan=3><IMG height=180 alt="" src="../../images/crm_16.gif"
                                width=24></TD>
-            <TD><INPUT title=��¼��̨ type=image height=48 alt="" width=86
-                       src="../../images/crm_17.gif" name=image></TD>
+            <TD><INPUT type="submit" value="" style="background-image: url('../../images/crm_17.gif');border: 0px;width: 86px;height: 48px"></TD>
             <TD><IMG height=48 alt="" src="../../images/crm_18.gif" width=21></TD>
             <TD colSpan=2><A href="http://www.fdkjgz.com/shop/index.asp"><IMG
-                    title=������ҳ height=48 alt="" src="../../images/crm_19.gif" width=84
-                    border=0></A></TD>
-            <TD><IMG height=48 alt="" src="../../images/crm_20.gif" width=101></TD>
+                     height="48" src="../../images/crm_19.gif" width="84"
+                    border="0"></A></TD>
+            <TD><IMG height="48"  src="../../images/crm_20.gif" width="101"></TD>
         </TR>
         <TR>
             <TD colSpan=5 rowSpan=2><IMG height=132 alt=""
@@ -97,17 +96,17 @@
                                width=332></TD>
         </TR>
         <TR>
-            <TD><IMG height=1 alt="" src="../../images/spacer.gif" width=59></TD>
-            <TD><IMG height=1 alt="" src="../../images/spacer.gif" width=127></TD>
-            <TD><IMG height=1 alt="" src="../../images/spacer.gif" width=24></TD>
-            <TD><IMG height=1 alt="" src="../../images/spacer.gif" width=86></TD>
-            <TD><IMG height=1 alt="" src="../../images/spacer.gif" width=21></TD>
-            <TD><IMG height=1 alt="" src="../../images/spacer.gif" width=28></TD>
-            <TD><IMG height=1 alt="" src="../../images/spacer.gif" width=56></TD>
-            <TD><IMG height=1 alt="" src="../../images/spacer.gif" width=101></TD>
-            <TD><IMG height=1 alt="" src="../../images/spacer.gif" width=170></TD>
-            <TD><IMG height=1 alt="" src="../../images/spacer.gif" width=125></TD>
-            <TD><IMG height=1 alt="" src="../../images/spacer.gif"
+            <TD><IMG height="1" alt="" src="../../images/spacer.gif" width=59></TD>
+            <TD><IMG height="1" alt="" src="../../images/spacer.gif" width=127></TD>
+            <TD><IMG height="1" alt="" src="../../images/spacer.gif" width=24></TD>
+            <TD><IMG height="1" alt="" src="../../images/spacer.gif" width=86></TD>
+            <TD><IMG height="1" alt="" src="../../images/spacer.gif" width=21></TD>
+            <TD><IMG height="1" alt="" src="../../images/spacer.gif" width=28></TD>
+            <TD><IMG height="1" alt="" src="../../images/spacer.gif" width=56></TD>
+            <TD><IMG height="1" alt="" src="../../images/spacer.gif" width=101></TD>
+            <TD><IMG height="1" alt="" src="../../images/spacer.gif" width=170></TD>
+            <TD><IMG height="1" alt="" src="../../images/spacer.gif" width=125></TD>
+            <TD><IMG height="1" alt="" src="../../images/spacer.gif"
                      width=207></TD>
         </TR>
         </TBODY>
