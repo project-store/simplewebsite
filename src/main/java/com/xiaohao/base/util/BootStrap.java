@@ -1,10 +1,12 @@
 package com.xiaohao.base.util;
 
-import com.xiaohao.base.model.User;
+import com.xiaohao.base.model.AdminUser;
 import com.xiaohao.core.dao.UserDao;
+import com.xiaohao.core.service.AdminUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,11 +15,20 @@ import javax.annotation.PostConstruct;
 public class BootStrap {
     @Autowired
     private UserDao userDao;
+    @Autowired
+    private AdminUserService adminUserService;
     @PostConstruct
     public void init(){
-        User u =new User();
-        u.setUserName("xiaohao");
-        userDao.save(u);
-        System.out.println(userDao.get(1L));
+        //初始化管理员配置
+        List adminUsers = adminUserService.loadAdminUser();
+       if(adminUsers!=null&&adminUsers.size()>0){
+           return;
+       }else {
+           AdminUser adminUser = new AdminUser();
+           adminUser.setLoginName("xiaohao");
+           adminUser.setPassword("xiaohao");
+           adminUser.setUserName("superhao");
+           adminUserService.addAdminUser(adminUser);
+       }
     }
 }

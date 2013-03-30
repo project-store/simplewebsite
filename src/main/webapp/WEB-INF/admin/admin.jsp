@@ -103,7 +103,7 @@
             </TABLE>
             <IFRAME
                     class=left_iframe id=frmleft name=frmleft
-                    src="innerPage/left.htm" frameBorder=0
+                    src="adminPageLeftAction!init" frameBorder=0
                     allowTransparency></IFRAME>
             <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
                 <TBODY>

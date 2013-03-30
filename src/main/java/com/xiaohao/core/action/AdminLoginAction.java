@@ -1,10 +1,13 @@
 package com.xiaohao.core.action;
 
 import com.xiaohao.base.action.BaseAction;
+import com.xiaohao.base.model.AdminUser;
+import com.xiaohao.core.service.AdminUserService;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Actions;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -19,24 +22,33 @@ import org.springframework.stereotype.Controller;
 @ParentPackage("web_admin")
 @Scope("prototype")
 @Actions({@Action(value = ("/adminLoginAction"), results = {
-        @Result(name = "init", location = "/WEB-INF/admin/admin.jsp"),
-        @Result(name = "login", location = "/WEB-INF/pages/admin/login.jsp"),
+        @Result(name = "admin", location = "/WEB-INF/admin/admin.jsp"),
+        @Result(name = "login", location = "/WEB-INF/admin/login.jsp"),
+        @Result(name = "init", location = "/WEB-INF/admin/login.jsp"),
         @Result(name = "list", type = "json", params = {"root", "entityListJson"}),
         @Result(name = "ajaxPromise", type = "json", params = {"root", "entityJson"})})})
 public class AdminLoginAction extends BaseAction {
+    @Autowired
+    AdminUserService adminUserService;
     private String adminName;
     private String adminPassword;
-
-    public String init() {
-        return "init";
-    }
-
     public String login() {
+        Object user =this.httpSession.getAttribute("adminUser");
+        if(user!=null){
+            return "admin";
+        }
         return "login";
     }
     //后台登陆操作
     public String adminLogin() {
-
+        if(adminName!=null&&!"".equals(adminName)&&adminPassword!=null&&!"".equals(adminPassword)){
+            AdminUser adminUser = adminUserService.loginAdmin(adminName, adminPassword);
+            if(adminUser==null){
+                return "login";
+            }else {
+                this.httpSession.setAttribute("adminUser",adminUser);
+            }
+        }
         return "admin";
     }
 

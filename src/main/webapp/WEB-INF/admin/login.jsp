@@ -1,15 +1,18 @@
+<%@include file="common/taglibs.jsp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
-<HEAD><TITLE>管理员登陆</TITLE>
+<HEAD><TITLE>鐧婚檰缁撳鍚庡彴</TITLE>
     <META http-equiv=Content-Language content=zh-cn>
-    <META http-equiv=Content-Type content="text/html; charset=gb2312">
+    <META http-equiv=Content-Type content="text/html; charset=utf-8">
     <META content="MSHTML 6.00.2800.1611" name=GENERATOR>
     <LINK href="images/css1.css" type=text/css rel=stylesheet>
     <LINK
             href="images/newhead.css" type=text/css rel=stylesheet>
 </HEAD>
 <BODY bgColor=#eef8e0 leftMargin=0 topMargin=0 MARGINWIDTH="0" MARGINHEIGHT="0" style="margin: 0px auto;width: 960px">
-<FORM name=adminlogin action=admin.asp method=post>
+<FORM name=adminlogin action="adminLoginAction!adminLogin" method=post>
     <TABLE cellSpacing=0 cellPadding=0 width=1004 border=0>
         <TBODY>
         <TR>
@@ -46,23 +49,16 @@
                                    border=0>
                                 <TBODY>
                                 <TR>
-                                    <TD align=middle width=81><FONT color=#ffffff>用户名：</FONT></TD>
-                                    <TD><INPUT class=regtxt title=请填写用户名 maxLength=16 size=16
-                                               value=admin name=username></TD>
+                                    <TD align=middle width=81><FONT color=#ffffff>鐢ㄦ埛鍚�:</FONT></TD>
+                                    <TD><INPUT class="regtxt" maxLength="16" size="16"
+                                                name="adminName"></TD>
                                 </TR>
                                 <TR>
-                                    <TD align=middle width=81><FONT color=#ffffff>密&nbsp;
-                                        码：</FONT></TD>
-                                    <TD><INPUT class=regtxt title=请填写密码 type=password maxLength=16
-                                               size=16 value=admin name=password></TD>
+                                    <TD align=middle width=81><FONT color=#ffffff>瀵嗙爜:</FONT></TD>
+                                    <TD><INPUT class="regtxt"  type="password" maxLength="16"
+                                               size="16"  name="adminPassword"></TD>
                                 </TR>
-                                <TR>
-                                    <TD align=middle width=81><FONT color=#ffffff>路&nbsp;
-                                        径：</FONT></TD>
-                                    <TD><INPUT class=regtxt title=请填写后台目录 maxLength=50 size=16
-                                               value=admin name=path> <INPUT type=hidden value=check
-                                                                             name=login></TD>
-                                </TR>
+
                                 </TBODY>
                             </TABLE>
                         </TD>
@@ -80,11 +76,11 @@
                                width=127></TD>
             <TD rowSpan=3><IMG height=180 alt="" src="../../images/crm_16.gif"
                                width=24></TD>
-            <TD><INPUT title=登录后台 type=image height=48 alt="" width=86
+            <TD><INPUT title=锟斤拷录锟斤拷台 type=image height=48 alt="" width=86
                        src="../../images/crm_17.gif" name=image></TD>
             <TD><IMG height=48 alt="" src="../../images/crm_18.gif" width=21></TD>
             <TD colSpan=2><A href="http://www.fdkjgz.com/shop/index.asp"><IMG
-                    title=返回首页 height=48 alt="" src="../../images/crm_19.gif" width=84
+                    title=锟斤拷锟斤拷锟斤拷页 height=48 alt="" src="../../images/crm_19.gif" width=84
                     border=0></A></TD>
             <TD><IMG height=48 alt="" src="../../images/crm_20.gif" width=101></TD>
         </TR>

@@ -10,7 +10,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="adminUser")
-public class AdminUser {
+public class AdminUser extends BaseModel {
     private Long userId;
     private String userName;
     private String loginName;
