@@ -15,7 +15,7 @@
     <!--end subtitle-->
     <div id="nav">
         <ul id="nav-pages">
-            <li><a href="index.jsp" <c:if test="${flag eq 'index'}">class="current"</c:if>>首页</a><span>~</span></li>
+            <li><a href="indexAction!index" <c:if test="${flag eq 'index'}">class="current"</c:if>>首页</a><span>~</span></li>
             <li><a href="aboutAction!init" <c:if test="${flag eq 'about'}">class="current"</c:if>>关于</a><span>~</span></li>
             <li><a href="loveStoryAction!init" <c:if test="${flag eq 'loveStory'}">class="current"</c:if>>恋爱史</a><span>~</span></li>
             <li><a href="newsAction!init" <c:if test="${flag eq 'news'}">class="current"</c:if>>结婚动态</a><span>~</span></li>

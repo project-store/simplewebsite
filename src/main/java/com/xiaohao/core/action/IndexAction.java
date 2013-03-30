@@ -29,7 +29,6 @@ public class IndexAction extends BaseAction {
         flag="index";
         return "index";
     }
-
     public String getFlag() {
         return flag;
     }
