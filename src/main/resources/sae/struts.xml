@@ -26,4 +26,8 @@
     <constant name="struts.configuration.classpath.defaultParentPackage" value="web_front" />
     <package name="web_admin"  extends="json-default"/>
     <constant name="struts.configuration.classpath.defaultParentPackage" value="web_admin" />
+    <package name="default" namespace="/" extends="struts-default">
+        <default-action-ref name="initAction" />
+
+    </package>
 </struts>
