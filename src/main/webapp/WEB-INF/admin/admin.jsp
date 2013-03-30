@@ -54,9 +54,6 @@
     <SCRIPT language=javaScript src="../../js/admin.js"
             type=text/javascript></SCRIPT>
 
-    <SCRIPT language=javascript
-            src="js\Admin(1).js"></SCRIPT>
-
     <SCRIPT>
         var status = 1;
         var Menus = new DvMenuCls;
@@ -152,7 +149,7 @@
             </TABLE>
             <IFRAME
                     class=main_iframe id=frmright name=frmright
-                    src="innerPage/syscome.htm" frameBorder=0
+                    src="adminPageLeftAction!loadAdminIndexContent" frameBorder=0
                     scrolling=yes></IFRAME>
             <TABLE style="BACKGROUND: #c4d8ed" cellSpacing=0 cellPadding=0
                    width="100%" border=0>

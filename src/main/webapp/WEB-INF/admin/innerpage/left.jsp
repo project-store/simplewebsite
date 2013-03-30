@@ -4,7 +4,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
 <HEAD><TITLE>左栏帮助</TITLE>
-    <META http-equiv=Content-Type content="text/html; charset=gb2312">
+    <META http-equiv=Content-Type content="text/html; charset=UTF-8">
     <LINK
             href="css/style_left.css" type=text/css rel=stylesheet>
     <META content="MSHTML 6.00.2900.5726" name=GENERATOR>

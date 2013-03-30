@@ -19,9 +19,13 @@ import org.springframework.stereotype.Controller;
 @ParentPackage("web_admin")
 @Scope("prototype")
 @Actions({@Action(value = ("/adminPageLeftAction"), results = {
-        @Result(name = "init", location = "/WEB-INF/admin/innerpage/left.jsp")})})
+        @Result(name = "init", location = "/WEB-INF/admin/innerpage/left.jsp"),
+        @Result(name = "indexContent", location = "/WEB-INF/admin/innerpage/adminContent.jsp")})})
 public class AdminPageLeftAction extends BaseAction{
     public String init(){
         return "init";
+    }
+    public String loadAdminIndexContent(){
+        return "indexContent";
     }
 }
