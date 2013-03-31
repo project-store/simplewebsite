@@ -35,4 +35,14 @@ public class AdminUserServiceImpl implements AdminUserService {
     public AdminUser loginAdmin(String userName, String password) {
         return adminUserDAO.getAdminUserByUserNameAndPassword(userName,password);
     }
+
+    @Override
+    public AdminUser loadAdminUserById(Long userId) {
+        return adminUserDAO.get(userId);
+    }
+
+    @Override
+    public void updateAdminUser(AdminUser adminUser) {
+        adminUserDAO.update(adminUser);
+    }
 }

@@ -18,6 +18,12 @@
                 <TBODY>
                 <TR>
                     <TD class=menu id=menubar vAlign=top>
+                        <c:forEach items="${adminModelList}" var="adminModel" varStatus="status">
+                            <LI>
+                                <A href="${adminModel.modelUrl}"
+                                   target=frmright>${adminModel.modelName}</A>
+                            </LI>
+                        </c:forEach>
                         <LI>
                             <A href="adminModelAction!init"
                                target=frmright>添加管理模块</A>

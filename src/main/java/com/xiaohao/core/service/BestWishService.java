@@ -1,5 +1,9 @@
 package com.xiaohao.core.service;
 
+import com.xiaohao.base.model.BestWish;
+
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: SuperHao
@@ -8,4 +12,6 @@ package com.xiaohao.core.service;
  * To change this template use File | Settings | File Templates.
  */
 public interface BestWishService {
+    public Long addBestWish(BestWish bestWish);
+    public List loadAllWish();
 }

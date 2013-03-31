@@ -1,8 +1,13 @@
 package com.xiaohao.core.service.impl;
 
+import com.xiaohao.base.model.BestWish;
+import com.xiaohao.core.dao.BestWishDAO;
 import com.xiaohao.core.service.BestWishService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,4 +19,16 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class BestWishServiceImpl implements BestWishService {
+    @Autowired
+    BestWishDAO bestWishDAO;
+
+    @Override
+    public Long addBestWish(BestWish bestWish) {
+        return (Long)bestWishDAO.save(bestWish);
+    }
+
+    @Override
+    public List loadAllWish() {
+        return bestWishDAO.loadAll();
+    }
 }

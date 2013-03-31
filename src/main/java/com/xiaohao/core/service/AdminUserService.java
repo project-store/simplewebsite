@@ -16,4 +16,7 @@ public interface AdminUserService {
 
     public void addAdminUser(AdminUser adminUser);
     public AdminUser loginAdmin(String userName,String password);
+    public AdminUser loadAdminUserById(Long userId);
+
+    public void updateAdminUser(AdminUser adminUser);
 }

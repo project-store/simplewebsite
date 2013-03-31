@@ -25,6 +25,7 @@ import org.springframework.stereotype.Controller;
         @Result(name = "admin", location = "/WEB-INF/admin/admin.jsp"),
         @Result(name = "login", location = "/WEB-INF/admin/login.jsp"),
         @Result(name = "init", location = "/WEB-INF/admin/login.jsp"),
+        @Result(name = "updatePassword",location = "/WEB-INF/admin/innerpage/modifyPassword.jsp"),
         @Result(name = "list", type = "json", params = {"root", "entityListJson"}),
         @Result(name = "ajaxPromise", type = "json", params = {"root", "entityJson"})})})
 public class AdminLoginAction extends BaseAction {
@@ -32,6 +33,20 @@ public class AdminLoginAction extends BaseAction {
     AdminUserService adminUserService;
     private String adminName;
     private String adminPassword;
+    private AdminUser adminUser;
+    public String updateAdminPassWord(){
+        adminUser = (AdminUser)this.httpSession.getAttribute("adminUser");
+        return "updatePassword";
+    }
+    public String updatePassWord(){
+        if(adminUser!=null&&adminUser.getUserId()!=null&&!"".equals(adminUser.getUserId())){
+            AdminUser adminUserTemp =adminUserService.loadAdminUserById(adminUser.getUserId());
+            adminUserTemp.setPassword(adminUser.getPassword());
+            adminUserTemp.setLoginName(adminUser.getLoginName());
+            adminUserService.updateAdminUser(adminUserTemp);
+        }
+        return "updatePassword";
+    }
     public String login() {
         Object user =this.httpSession.getAttribute("adminUser");
         if(user!=null){
@@ -70,5 +85,13 @@ public class AdminLoginAction extends BaseAction {
 
     public void setAdminPassword(String adminPassword) {
         this.adminPassword = adminPassword;
+    }
+
+    public AdminUser getAdminUser() {
+        return adminUser;
+    }
+
+    public void setAdminUser(AdminUser adminUser) {
+        this.adminUser = adminUser;
     }
 }

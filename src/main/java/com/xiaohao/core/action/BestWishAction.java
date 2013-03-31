@@ -1,10 +1,13 @@
 package com.xiaohao.core.action;
 
 import com.xiaohao.base.action.BaseAction;
+import com.xiaohao.base.model.BestWish;
+import com.xiaohao.core.service.BestWishService;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Actions;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -25,16 +28,33 @@ import org.springframework.stereotype.Controller;
         @Result(name = "ajaxPromise", type = "json", params = { "root", "entityJson" }) }) })
 public class BestWishAction extends BaseAction {
     private String flag;
+    private BestWish bestWish;
+    @Autowired
+    BestWishService bestWishService;
     public String init(){
         flag="wishes";
         return "init";
     }
-
+    public String addBestWish(){
+        if(bestWish!=null){
+            bestWishService.addBestWish(bestWish);
+        }
+        flag="wishes";
+        return "addBestWish";
+    }
     public String getFlag() {
         return flag;
     }
 
     public void setFlag(String flag) {
         this.flag = flag;
+    }
+
+    public BestWish getBestWish() {
+        return bestWish;
+    }
+
+    public void setBestWish(BestWish bestWish) {
+        this.bestWish = bestWish;
     }
 }
