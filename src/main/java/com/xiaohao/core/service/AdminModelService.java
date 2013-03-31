@@ -16,4 +16,6 @@ public interface AdminModelService {
     public void delAdminModel(Long modelId);
     public void updateAdminModel(AdminModel adminModel);
     public List listAdminModel();
+
+    public AdminModel loadAdminModelById(Long modelId);
 }

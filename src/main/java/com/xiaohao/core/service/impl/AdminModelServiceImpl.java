@@ -40,4 +40,9 @@ public class AdminModelServiceImpl implements AdminModelService {
     public List listAdminModel() {
         return adminModelDAO.listAdminModels();
     }
+
+    @Override
+    public AdminModel loadAdminModelById(Long modelId) {
+        return adminModelDAO.get(modelId);
+    }
 }

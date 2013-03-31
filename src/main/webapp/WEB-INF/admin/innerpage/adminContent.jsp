@@ -1,7 +1,10 @@
+<%@include file="../common/taglibs.jsp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML xmlns="http://www.w3.org/1999/xhtml">
-<HEAD><TITLE>后台欢迎界面</TITLE>
-    <META http-equiv=Content-Type content="text/html; charset=gb2312">
+<HEAD><TITLE></TITLE>
+    <META http-equiv=Content-Type content="text/html; charset=utf-8">
     <LINK
             href="../../../css/Admin.css" rel=stylesheet>
     <SCRIPT language=javascript src="syscome.files/Admin.js"></SCRIPT>

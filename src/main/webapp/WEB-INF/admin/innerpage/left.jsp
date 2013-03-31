@@ -19,7 +19,7 @@
                 <TR>
                     <TD class=menu id=menubar vAlign=top>
                         <LI>
-                            <A href=""
+                            <A href="adminModelAction!init"
                                target=frmright>添加管理模块</A>
                         </LI>
                     </TD>

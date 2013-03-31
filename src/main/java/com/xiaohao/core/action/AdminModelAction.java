@@ -24,7 +24,7 @@ import java.util.List;
 @ParentPackage("web_admin")
 @Scope("prototype")
 @Actions({@Action(value = ("/adminModelAction"), results = {
-        @Result(name = "admin", location = "/WEB-INF/admin/innerpage/adminModel.jsp")})})
+        @Result(name = "init", location = "/WEB-INF/admin/innerpage/adminModel.jsp")})})
 public class AdminModelAction extends BaseAction {
     private AdminModel adminModel;
     private List<AdminModel> adminModelList;
@@ -35,8 +35,15 @@ public class AdminModelAction extends BaseAction {
         return "init";
     }
     public String addModel(){
-        adminModelService.addAdminModel(adminModel);
+        if(adminModel.getModelId()==null||"".equals(adminModel.getModelId())){
+            adminModelService.addAdminModel(adminModel);
+
+        }else {
+            adminModelService.updateAdminModel(adminModel);
+        }
+
         adminModelList = adminModelService.listAdminModel();
+        adminModel=null;
         return "init";
     }
     public String delModel(){
@@ -45,7 +52,9 @@ public class AdminModelAction extends BaseAction {
         return "init";
     }
     public String updateModel(){
-        adminModelService.updateAdminModel(adminModel);
+        if(adminModel.getModelId()!=null&&!"".equals(adminModel.getModelId())){
+            adminModel = adminModelService.loadAdminModelById(adminModel.getModelId());
+        }
         adminModelList = adminModelService.listAdminModel();
         return "init";
     }
