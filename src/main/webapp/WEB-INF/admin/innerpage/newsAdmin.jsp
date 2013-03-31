@@ -22,8 +22,6 @@
 <body>
 	<div id="container">
 		<header>
-			<a href="http://web-kreation.com" title="Web-Kreation"><img src="http://web-kreation.com/wp-content/themes/web-kreation_v2/images/logo.jpg" alt="Web-Kreation - Home" /></a>
-			<h1>WKRTE - jQuery Rich Text Editor</h1>
 		</header>
 		<article>
 			<section>				
