@@ -27,9 +27,10 @@
 			<section>				
 				<p>添加文章</p>
 				<form action="" method="post">
-                 <p><input name=""/></p>
+                 <p><input name="newsTitle"/></p>
+                 <p><input name="keyWords"/></p><br/><br/>
 				<!-- THE WKRTE TEXTAREA -->		        
-				<textarea cols="70" rows="20" class="wkrte-1" method="post" action="#">
+				<textarea name="newsContent" cols="70" rows="20" class="wkrte-1">
 				</textarea>	
 				<!-- END TEXTAREA -->
                 <p><input value="提交"/>&nbsp;&nbsp;</p>

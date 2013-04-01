@@ -15,7 +15,7 @@ import java.util.Date;
 public class News extends BaseModel {
     private Long newsId;
     private String newsTitle;
-    private String newContent;
+    private String newsContent;
     private Long addUserId;
     private Date createDate;
     private Date lastModifyDate;
@@ -38,14 +38,17 @@ public class News extends BaseModel {
     public void setNewsTitle(String newsTitle) {
         this.newsTitle = newsTitle;
     }
-    @Column(name="newContent")
-    public String getNewContent() {
-        return newContent;
+    @Column(name="newsContent")
+    public String getNewsContent() {
+        return newsContent;
     }
 
-    public void setNewContent(String newContent) {
-        this.newContent = newContent;
+    public void setNewsContent(String newsContent) {
+        this.newsContent = newsContent;
     }
+
+
+
     @Column(name="addUserId")
     public Long getAddUserId() {
         return addUserId;
