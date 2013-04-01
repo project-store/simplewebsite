@@ -25,12 +25,13 @@
 		</header>
 		<article>
 			<section>				
-				<p>添加文章</p>
+				<p><c:if test="${news eq null}">添加</c:if><c:if test="${news != null}">更新</c:if>文章</p>
 				<form action="newsAction!addNews" method="post">
-                 <p><input name="news.newsTitle"/></p>
-                 <p><input name="news.keyWords"/></p><br/><br/>
+                 <p><input name="news.newsTitle" value="${news.newsTitle}"/><input type="hidden" name="news.newsId" value="${news.newsId}"></p>
+                 <p><input name="news.keyWords" value="${news.keyWords}"/></p><br/><br/>
 				<!-- THE WKRTE TEXTAREA -->		        
-				<textarea name="news.newsContent" cols="70" rows="20" class="wkrte-1">
+				<textarea name="news.newsContent"  cols="70" rows="20" class="wkrte-1">
+                    ${news.newsContent}
 				</textarea>	
 				<!-- END TEXTAREA -->
                 <p><input type="submit" value="提交"/>&nbsp;&nbsp;</p>

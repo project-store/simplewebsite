@@ -13,4 +13,7 @@ import com.xiaohao.base.model.News;
 public interface NewsService {
     public Long addNews(News news);
     public Page<News> listAllNews();
+    public void delNews(Long newsId);
+    public News loadNewsById(Long newsId);
+    public void updateNews(News news);
 }

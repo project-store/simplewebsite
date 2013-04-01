@@ -30,4 +30,19 @@ public class NewsServiceImpl implements NewsService {
         String hql = "select t from News t";
         return newsDAO.queryForpage(hql);
     }
+
+    @Override
+    public void delNews(Long newsId) {
+        newsDAO.deleteByKey(newsId);
+    }
+
+    @Override
+    public News loadNewsById(Long newsId) {
+        return newsDAO.get(newsId);  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void updateNews(News news) {
+       newsDAO.update(news);
+    }
 }

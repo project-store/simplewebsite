@@ -25,38 +25,65 @@ import java.util.Date;
 @Controller
 @ParentPackage("web_front")
 @Scope("prototype")
-@Actions({ @Action(value = ( "/newsAction" ), results = {
+@Actions({@Action(value = ("/newsAction"), results = {
         @Result(name = "init", location = "/WEB-INF/page/news.jsp"),
         @Result(name = "initAdd", location = "/WEB-INF/admin/innerpage/newsAdmin.jsp"),
         @Result(name = "addNews", location = "/WEB-INF/admin/innerpage/newsAdmin.jsp"),
         @Result(name = "listNews", location = "/WEB-INF/admin/innerpage/newsList.jsp"),
-        @Result(name = "list", type = "json", params = { "root", "entityListJson" }),
-        @Result(name = "ajaxPromise", type = "json", params = { "root", "entityJson" }) }) })
+        @Result(name = "list", type = "json", params = {"root", "entityListJson"}),
+        @Result(name = "ajaxPromise", type = "json", params = {"root", "entityJson"})})})
 public class NewsAction extends BaseAction {
     @Autowired
     NewsService newsService;
     private String flag;
     private News news;
     private Page<News> newsList;
-    public String init(){
-        flag="news";
+
+    public String init() {
+        flag = "news";
         return "init";
     }
-    public String initAdd(){
+
+    public String initAdd() {
         return "initAdd";
     }
-    public String addNews(){
-        if(news!=null){
-            AdminUser adminUser =(AdminUser)this.httpSession.getAttribute("adminUser");
+
+    public String addNews() {
+        AdminUser adminUser = (AdminUser) this.httpSession.getAttribute("adminUser");
+        if (news != null&&news.getNewsId()!=null&&!"".equals(news.getNewsId())) {
+            String content =news.getNewsContent();
+            news = newsService.loadNewsById(news.getNewsId());
+            news.setNewsContent(content);
+            news.setAddUserId(adminUser.getUserId());
+            news.setLastModifyDate(new Date());
+            newsService.updateNews(news);
+        }else if(news!=null){
+
             news.setAddUserId(adminUser.getUserId());
             news.setCreateDate(new Date());
+            newsService.addNews(news);
         }
-        newsService.addNews(news);
+        news=null;
         return "addNews";
     }
-    public String listNews(){
-       newsList= newsService.listAllNews();
+
+    public String listNews() {
+        newsList = newsService.listAllNews();
         return "listNews";
+    }
+
+    public String delNews() {
+        if (news.getNewsId() != null) {
+            newsService.delNews(news.getNewsId());
+        }
+        newsList = newsService.listAllNews();
+        return "listNews";
+    }
+    public String updateNews(){
+        if(news!=null&&news.getNewsId()!=null){
+            news =newsService.loadNewsById(news.getNewsId());
+        }
+        return "initAdd";
     }
     public String getFlag() {
         return flag;

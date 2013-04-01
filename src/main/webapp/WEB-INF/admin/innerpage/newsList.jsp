@@ -25,7 +25,7 @@
         <tr><td colspan="6">现存文章</td></tr>
         <tr><td>文章编号</td><td>文章名称</td><td>创建时间</td><td>关键字</td><td>上次修改时间</td><td>操作</td></tr>
         <c:forEach items="${newsList.items}" var="news" varStatus="status">
-            <tr><td>${news.newsId}</td><td>${news.newsTitle}</td><td>${news.createDate}</td><td>${news.keyWords}</td><td>${news.lastModifyDate}</td><td><a href="adminModelAction!delModel?adminModel.modelId=${news.newsId}">删除</a>&nbsp;&nbsp;<a href="adminModelAction!updateModel?adminModel.modelId=${news.newsId}">更新</a></td></tr>
+            <tr><td>${news.newsId}</td><td>${news.newsTitle}</td><td>${news.createDate}</td><td>${news.keyWords}</td><td>${news.lastModifyDate}</td><td><a href="newsAction!delNews?news.newsId=${news.newsId}">删除</a>&nbsp;&nbsp;<a href="newsAction!updateNews?news.newsId=${news.newsId}">更新</a></td></tr>
         </c:forEach>
         <tr> <td colspan="6" align="center">
 <pg:pager url="newsAction!listNews"
