@@ -1,5 +1,7 @@
 package com.xiaohao.core.action;
 
+import com.xiaohao.base.action.BaseAction;
+import com.xiaohao.base.model.AdminUser;
 import com.xiaohao.base.model.News;
 import com.xiaohao.core.service.NewsService;
 import org.apache.struts2.convention.annotation.Action;
@@ -9,6 +11,8 @@ import org.apache.struts2.convention.annotation.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+
+import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -26,7 +30,7 @@ import org.springframework.stereotype.Controller;
         @Result(name = "addNews", location = "/WEB-INF/admin/innerpage/newsAdmin.jsp"),
         @Result(name = "list", type = "json", params = { "root", "entityListJson" }),
         @Result(name = "ajaxPromise", type = "json", params = { "root", "entityJson" }) }) })
-public class NewsAction {
+public class NewsAction extends BaseAction {
     @Autowired
     NewsService newsService;
     private String flag;
@@ -39,6 +43,11 @@ public class NewsAction {
         return "initAdd";
     }
     public String addNews(){
+        if(news!=null){
+            AdminUser adminUser =(AdminUser)this.httpSession.getAttribute("adminUser");
+            news.setAddUserId(adminUser.getUserId());
+            news.setCreateDate(new Date());
+        }
         newsService.addNews(news);
         return "addNews";
     }
