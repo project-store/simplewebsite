@@ -21,34 +21,7 @@
   <!--end header-->
   <div id="main">
     <div id="content">
-      <div class="article">
-        <h2 class="title"><a href="#">A Guide On Mastering Slow Shutter Speeds</a></h2>
-        <p class="meta">Jennifer Patterson ~ 14th April 2011</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris. Mauris interdum, dolor in vulputate tincidunt, mauris lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<a href="#" class="more-link">Read The Full Article &raquo;</a></p>
-      </div>
-      <!--end post-->
-      <div class="line"></div>
-      <div class="article">
-        <h2 class="title"><a href="#">How To Take Stunning Interior Photos</a></h2>
-        <p class="meta">Jennifer Patterson ~ 7th Aril 2011</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris. Mauris interdum, dolor in vulputate tincidunt, mauris lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<a href="#" class="more-link">Read The Full Article &raquo;</a></p>
-      </div>
-      <!--end post-->
-      <div class="line"></div>
-      <div class="article">
-        <h2 class="title"><a href="#">Top Tips For Taking Portrait Photos</a></h2>
-        <p class="meta">Jennifer Patterson ~ 28th March 2011</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris. Mauris interdum, dolor in vulputate tincidunt, mauris lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<a href="#" class="more-link">Read The Full Article &raquo;</a></p>
-      </div>
-      <!--end post-->
-      <div class="line"></div>
-      <div class="article">
-        <h2 class="title"><a href="#">How To Take Great Wildlife Photos</a></h2>
-        <p class="meta">Jennifer Patterson ~ 21st March 2011</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris. Mauris interdum, dolor in vulputate tincidunt, mauris lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<a href="#" class="more-link">Read The Full Article &raquo;</a></p>
-      </div>
-      <!--end post-->
-      <div class="line"></div>
+      <!--迭代显示news-->
       <div class="article">
         <h2 class="title"><a href="#">8 Tips For Shooting Water Droplets</a></h2>
         <p class="meta">Jennifer Patterson ~ 14th March 2011</p>
@@ -56,9 +29,12 @@
       </div>
       <!--end post-->
       <div class="line"></div>
+       <!--迭代显示news-->
+        <!---此处做一个分页导航----->
       <a href="#">&laquo; Previous Posts</a></div>
     <!--end content-->
-    <div id="sidebar">
+      <!--旁边随即显示朋友祝福见证-->
+      <div id="sidebar">
       <div class="author-photo"><img src="images/author-img.jpg" alt="" /></div>
       <!--end author-photo-->
       <div id="author-details">
