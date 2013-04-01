@@ -1,8 +1,7 @@
 package com.xiaohao.core.service;
 
+import com.xiaohao.base.dao.Page;
 import com.xiaohao.base.model.News;
-
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,5 +12,5 @@ import java.util.List;
  */
 public interface NewsService {
     public Long addNews(News news);
-    public List<News> listAllNews();
+    public Page<News> listAllNews();
 }

@@ -1,6 +1,7 @@
 package com.xiaohao.core.action;
 
 import com.xiaohao.base.action.BaseAction;
+import com.xiaohao.base.dao.Page;
 import com.xiaohao.base.model.AdminUser;
 import com.xiaohao.base.model.News;
 import com.xiaohao.core.service.NewsService;
@@ -13,7 +14,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -37,7 +37,7 @@ public class NewsAction extends BaseAction {
     NewsService newsService;
     private String flag;
     private News news;
-    private List<News> newsList;
+    private Page<News> newsList;
     public String init(){
         flag="news";
         return "init";
@@ -74,11 +74,11 @@ public class NewsAction extends BaseAction {
         this.news = news;
     }
 
-    public List<News> getNewsList() {
+    public Page<News> getNewsList() {
         return newsList;
     }
 
-    public void setNewsList(List<News> newsList) {
+    public void setNewsList(Page<News> newsList) {
         this.newsList = newsList;
     }
 }

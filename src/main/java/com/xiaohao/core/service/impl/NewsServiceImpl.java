@@ -1,13 +1,12 @@
 package com.xiaohao.core.service.impl;
 
+import com.xiaohao.base.dao.Page;
 import com.xiaohao.base.model.News;
 import com.xiaohao.core.dao.NewsDAO;
 import com.xiaohao.core.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -27,7 +26,8 @@ public class NewsServiceImpl implements NewsService {
     }
 
     @Override
-    public List<News> listAllNews() {
-        return newsDAO.loadAll();
+    public Page<News> listAllNews() {
+        String hql = "select t from News t";
+        return newsDAO.queryForpage(hql);
     }
 }

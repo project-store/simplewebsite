@@ -24,12 +24,12 @@
            border="1">
         <tr><td colspan="6">现存文章</td></tr>
         <tr><td>文章编号</td><td>文章名称</td><td>创建时间</td><td>关键字</td><td>上次修改时间</td><td>操作</td></tr>
-        <c:forEach items="${newsList}" var="news" varStatus="status">
+        <c:forEach items="${newsList.items}" var="news" varStatus="status">
             <tr><td>${news.newsId}</td><td>${news.newsTitle}</td><td>${news.createDate}</td><td>${news.keyWords}</td><td>${news.lastModifyDate}</td><td><a href="adminModelAction!delModel?adminModel.modelId=${news.newsId}">删除</a>&nbsp;&nbsp;<a href="adminModelAction!updateModel?adminModel.modelId=${news.newsId}">更新</a></td></tr>
         </c:forEach>
-        <tr> <td>
-<pg:pager url="webFrontProductsListAction!listProductsHot"
-          items="${newsList}" maxPageItems="10" maxIndexPages="5"
+        <tr> <td colspan="6" align="center">
+<pg:pager url="newsAction!listNews"
+          items="${newsList.total}" maxPageItems="10" maxIndexPages="5"
           export="currentPageNumber=pageNumber">
     <pg:prev>
         <a href="${pageUrl }">上一页</a>
@@ -37,16 +37,17 @@
     <pg:pages>
         <c:choose>
             <c:when test="${currentPageNumber eq pageNumber }">
-                <span class="seach_fy05">${pageNumber }</span>
+                <span style="width:8px;height:8px;border: 1px solid red;padding-right: 3px">${pageNumber }</span>
             </c:when>
             <c:otherwise>
-                <a href="${pageUrl }">${pageNumber }</a>
+                <a style="display:inline;width:8px;height:8px;border:1px solid #ffffff;padding-right: 3px" href="${pageUrl }">${pageNumber }</a>
             </c:otherwise>
         </c:choose>
     </pg:pages>
     <pg:next>
         <a href="${pageUrl }">下一页</a>
     </pg:next>
+    当前:${currentPageNumber}/总共:${newsList.pageCount}
     </pg:pager>
         </td></tr>
     </TABLE>
