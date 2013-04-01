@@ -1,6 +1,9 @@
 package com.xiaohao.core.service.impl;
 
+import com.xiaohao.base.model.News;
+import com.xiaohao.core.dao.NewsDAO;
 import com.xiaohao.core.service.NewsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,4 +17,10 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class NewsServiceImpl implements NewsService {
+    @Autowired
+    NewsDAO newsDAO;
+    @Override
+    public Long addNews(News news) {
+       return (Long)newsDAO.save(news);
+    }
 }

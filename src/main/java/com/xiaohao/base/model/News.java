@@ -38,6 +38,7 @@ public class News extends BaseModel {
     public void setNewsTitle(String newsTitle) {
         this.newsTitle = newsTitle;
     }
+    @Lob
     @Column(name="newsContent")
     public String getNewsContent() {
         return newsContent;

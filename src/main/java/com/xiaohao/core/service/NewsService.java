@@ -1,5 +1,7 @@
 package com.xiaohao.core.service;
 
+import com.xiaohao.base.model.News;
+
 /**
  * Created with IntelliJ IDEA.
  * User: SuperHao
@@ -8,4 +10,5 @@ package com.xiaohao.core.service;
  * To change this template use File | Settings | File Templates.
  */
 public interface NewsService {
+    public Long addNews(News news);
 }

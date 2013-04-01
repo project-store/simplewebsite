@@ -1,9 +1,12 @@
 package com.xiaohao.core.action;
 
+import com.xiaohao.base.model.News;
+import com.xiaohao.core.service.NewsService;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Actions;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -20,10 +23,14 @@ import org.springframework.stereotype.Controller;
 @Actions({ @Action(value = ( "/newsAction" ), results = {
         @Result(name = "init", location = "/WEB-INF/page/news.jsp"),
         @Result(name = "initAdd", location = "/WEB-INF/admin/innerpage/newsAdmin.jsp"),
+        @Result(name = "addNews", location = "/WEB-INF/admin/innerpage/newsAdmin.jsp"),
         @Result(name = "list", type = "json", params = { "root", "entityListJson" }),
         @Result(name = "ajaxPromise", type = "json", params = { "root", "entityJson" }) }) })
 public class NewsAction {
+    @Autowired
+    NewsService newsService;
     private String flag;
+    private News news;
     public String init(){
         flag="news";
         return "init";
@@ -31,11 +38,23 @@ public class NewsAction {
     public String initAdd(){
         return "initAdd";
     }
+    public String addNews(){
+        newsService.addNews(news);
+        return "addNews";
+    }
     public String getFlag() {
         return flag;
     }
 
     public void setFlag(String flag) {
         this.flag = flag;
+    }
+
+    public News getNews() {
+        return news;
+    }
+
+    public void setNews(News news) {
+        this.news = news;
     }
 }

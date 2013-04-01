@@ -26,14 +26,14 @@
 		<article>
 			<section>				
 				<p>添加文章</p>
-				<form action="" method="post">
-                 <p><input name="newsTitle"/></p>
-                 <p><input name="keyWords"/></p><br/><br/>
+				<form action="newsAction!addNews" method="post">
+                 <p><input name="news.newsTitle"/></p>
+                 <p><input name="news.keyWords"/></p><br/><br/>
 				<!-- THE WKRTE TEXTAREA -->		        
-				<textarea name="newsContent" cols="70" rows="20" class="wkrte-1">
+				<textarea name="news.newsContent" cols="70" rows="20" class="wkrte-1">
 				</textarea>	
 				<!-- END TEXTAREA -->
-                <p><input value="提交"/>&nbsp;&nbsp;</p>
+                <p><input type="submit" value="提交"/>&nbsp;&nbsp;</p>
                 </form>
 			</section>
 		</article>
