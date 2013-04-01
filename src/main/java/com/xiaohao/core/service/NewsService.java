@@ -2,6 +2,8 @@ package com.xiaohao.core.service;
 
 import com.xiaohao.base.model.News;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: SuperHao
@@ -11,4 +13,5 @@ import com.xiaohao.base.model.News;
  */
 public interface NewsService {
     public Long addNews(News news);
+    public List<News> listAllNews();
 }

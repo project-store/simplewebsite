@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -28,6 +29,7 @@ import java.util.Date;
         @Result(name = "init", location = "/WEB-INF/page/news.jsp"),
         @Result(name = "initAdd", location = "/WEB-INF/admin/innerpage/newsAdmin.jsp"),
         @Result(name = "addNews", location = "/WEB-INF/admin/innerpage/newsAdmin.jsp"),
+        @Result(name = "listNews", location = "/WEB-INF/admin/innerpage/newsList.jsp"),
         @Result(name = "list", type = "json", params = { "root", "entityListJson" }),
         @Result(name = "ajaxPromise", type = "json", params = { "root", "entityJson" }) }) })
 public class NewsAction extends BaseAction {
@@ -35,6 +37,7 @@ public class NewsAction extends BaseAction {
     NewsService newsService;
     private String flag;
     private News news;
+    private List<News> newsList;
     public String init(){
         flag="news";
         return "init";
@@ -51,6 +54,10 @@ public class NewsAction extends BaseAction {
         newsService.addNews(news);
         return "addNews";
     }
+    public String listNews(){
+       newsList= newsService.listAllNews();
+        return "listNews";
+    }
     public String getFlag() {
         return flag;
     }
@@ -65,5 +72,13 @@ public class NewsAction extends BaseAction {
 
     public void setNews(News news) {
         this.news = news;
+    }
+
+    public List<News> getNewsList() {
+        return newsList;
+    }
+
+    public void setNewsList(List<News> newsList) {
+        this.newsList = newsList;
     }
 }

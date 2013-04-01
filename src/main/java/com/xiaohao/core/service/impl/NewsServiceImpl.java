@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: SuperHao
@@ -22,5 +24,10 @@ public class NewsServiceImpl implements NewsService {
     @Override
     public Long addNews(News news) {
        return (Long)newsDAO.save(news);
+    }
+
+    @Override
+    public List<News> listAllNews() {
+        return newsDAO.loadAll();
     }
 }
