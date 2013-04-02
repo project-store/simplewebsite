@@ -357,3 +357,34 @@ ul.thumbs li a img{
     margin-right: 3px;
     padding: 3px;
 }
+#back-top {
+    bottom: 60px;
+    margin-right: 20px;
+    position: fixed;
+    right: 20px;
+}
+#back-top a {
+    color: #BBBBBB;
+    display: block;
+    font: 11px/100% Arial,Helvetica,sans-serif;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 1s ease 0s;
+    width: 54px;
+}
+#back-top a:hover {
+    color: #000000;
+}
+#back-top span {
+    background: url("../images/up-arrow.jpg") no-repeat scroll center center #DDDDDD;
+    border-radius: 7px 7px 7px 7px;
+    display: block;
+    height: 54px;
+    margin-bottom: 7px;
+    transition: all 1s ease 0s;
+    width: 54px;
+}
+#back-top a:hover span {
+    background-color: #777777;
+}

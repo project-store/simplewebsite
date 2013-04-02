@@ -7,7 +7,7 @@
 <title>小郝和小丽结婚啦~O(∩_∩)O哈哈~ | 恋爱史</title>
 <meta charset="utf-8">
 <link type="text/css" rel="stylesheet" href="styles/style.css" />
-
+    <script type="text/javascript" src="../../js/jquery-1.3.2.js"></script>
 <!--[if IE 6]>
     <script src="../../js/ie6-transparency.js"></script>
     <script>DD_belatedPNG.fix('#header .logo img, .subtitle img, .slideshow-container, .navigation-container #thumbs .thumbs li .thumb img, .navigation a.next, .footer-line, #sidebar .author-photo, .line, .commentlist .comment-reply-link, #contact-page #contact .submit');</script>
