@@ -18,6 +18,7 @@ public class BestWish extends BaseModel {
     private String mobile;
     private String title;
     private String wishContent;
+    private String viewFlag;
     @Id
     @Column(name="wishId")
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -67,5 +68,13 @@ public class BestWish extends BaseModel {
 
     public void setWishContent(String wishContent) {
         this.wishContent = wishContent;
+    }
+    @Column(name = "viewFlag")
+    public String getViewFlag() {
+        return viewFlag;
+    }
+
+    public void setViewFlag(String viewFlag) {
+        this.viewFlag = viewFlag;
     }
 }

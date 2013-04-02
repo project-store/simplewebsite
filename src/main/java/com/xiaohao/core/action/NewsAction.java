@@ -40,6 +40,7 @@ public class NewsAction extends BaseAction {
     private Page<News> newsList;
 
     public String init() {
+        newsList = newsService.listAllNews();
         flag = "news";
         return "init";
     }

@@ -22,20 +22,43 @@
   <div id="main">
     <div id="content">
       <!--迭代显示news-->
+      <c:forEach items="${newsList.items}" var="news" varStatus="status">
       <div class="article">
           <!--标题和作者时间-->
-          <h2 class="title"><a href="#">婚纱照拍摄完成</a></h2>
-        <p class="meta">小郝 ~ 14th March 2011</p>
+          <h2 class="title"><a href="#">${news.newsTitle}</a></h2>
+        <p class="meta">小郝 ~ ${news.createDate}</p>
           <!--文章正文-->
-          婚纱照拍摄完成，马上上传空间~
+         ${news.newsContent}
           <!--下面是文章链接-->
         <a href="#" class="more-link">Read The Full Article &raquo;</a>
       </div>
+
       <!--end post-->
       <div class="line"></div>
+      </c:forEach>
        <!--迭代显示news-->
         <!---此处做一个分页导航----->
-        <span class="pageNumStyle"><a href="#" >1</a></span><span class="pageNumStyle"><a href="#">2</a></span><span class="pageNumStyle"><a href="#">3</a></span><span class="pageNumStyle"><a href="#">下一页</a></span>
+        <pg:pager url="newsAction!init"
+                  items="${newsList.total}" maxPageItems="10" maxIndexPages="5"
+                  export="currentPageNumber=pageNumber">
+            <pg:prev>
+                <span class="pageNumStyle"><a href="${pageUrl }">上一页</a></span>
+            </pg:prev>
+            <pg:pages>
+                <c:choose>
+                    <c:when test="${currentPageNumber eq pageNumber }">
+                        <span class="pageNumStyle" style="border:1px solid red"><a href="#">${pageNumber }</a></span>
+                    </c:when>
+                    <c:otherwise>
+                        <span class="pageNumStyle"><a href="${pageUrl }">${pageNumber }</a></span>
+                    </c:otherwise>
+                </c:choose>
+            </pg:pages>
+            <pg:next>
+                <span class="pageNumStyle"><a href="${pageUrl }">下一页</a></span>
+            </pg:next>
+        </pg:pager>
+
     </div>
 
     <!--end content-->
