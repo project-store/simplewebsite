@@ -350,3 +350,10 @@ ul.thumbs li a img{
 	text-align:center;
 	padding:8px 0 0 0;
 }
+/*xiaohao add*/
+.pageNumStyle {
+    border: 1px solid #EEEEEE;
+    display: inline;
+    margin-right: 3px;
+    padding: 3px;
+}

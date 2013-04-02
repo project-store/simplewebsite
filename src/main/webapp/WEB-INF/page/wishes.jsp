@@ -28,35 +28,8 @@
       </div>
       <!--end post-->
       <div class="line"></div>
-      <div class="article">
-        <h2 class="title"><a href="#">How To Take Stunning Interior Photos</a></h2>
-        <p class="meta">Jennifer Patterson ~ 7th Aril 2011</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris. Mauris interdum, dolor in vulputate tincidunt, mauris lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<a href="#" class="more-link">Read The Full Article &raquo;</a></p>
-      </div>
-      <!--end post-->
-      <div class="line"></div>
-      <div class="article">
-        <h2 class="title"><a href="#">Top Tips For Taking Portrait Photos</a></h2>
-        <p class="meta">Jennifer Patterson ~ 28th March 2011</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris. Mauris interdum, dolor in vulputate tincidunt, mauris lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<a href="#" class="more-link">Read The Full Article &raquo;</a></p>
-      </div>
-      <!--end post-->
-      <div class="line"></div>
-      <div class="article">
-        <h2 class="title"><a href="#">How To Take Great Wildlife Photos</a></h2>
-        <p class="meta">Jennifer Patterson ~ 21st March 2011</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris. Mauris interdum, dolor in vulputate tincidunt, mauris lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<a href="#" class="more-link">Read The Full Article &raquo;</a></p>
-      </div>
-      <!--end post-->
-      <div class="line"></div>
-      <div class="article">
-        <h2 class="title"><a href="#">8 Tips For Shooting Water Droplets</a></h2>
-        <p class="meta">Jennifer Patterson ~ 14th March 2011</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris. Mauris interdum, dolor in vulputate tincidunt, mauris lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<a href="#" class="more-link">Read The Full Article &raquo;</a></p>
-      </div>
-      <!--end post-->
-      <div class="line"></div>
-      <a href="#">&laquo; Previous Posts</a></div>
+        <span class="pageNumStyle"><a href="#" >1</a></span><span class="pageNumStyle"><a href="#">2</a></span><span class="pageNumStyle"><a href="#">3</a></span><span class="pageNumStyle"><a href="#">下一页</a></span>
+    </div>
     <!--end content-->
       <s:action name="randomWishAction" ignoreContextParams="true" executeResult="true"></s:action>
     <!--end sidebar-->
