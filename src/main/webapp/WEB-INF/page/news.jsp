@@ -24,9 +24,10 @@
       <!--迭代显示news-->
       <div class="article">
           <!--标题和作者时间-->
-          <h2 class="title"><a href="#">8 Tips For Shooting Water Droplets</a></h2>
-        <p class="meta">Jennifer Patterson ~ 14th March 2011</p>
+          <h2 class="title"><a href="#">婚纱照拍摄完成</a></h2>
+        <p class="meta">小郝 ~ 14th March 2011</p>
           <!--文章正文-->
+          婚纱照拍摄完成，马上上传空间~
           <!--下面是文章链接-->
         <a href="#" class="more-link">Read The Full Article &raquo;</a>
       </div>

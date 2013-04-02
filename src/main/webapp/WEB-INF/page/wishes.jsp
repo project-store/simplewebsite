@@ -22,9 +22,8 @@
   <div id="main">
     <div id="content">
       <div class="article">
-        <h2 class="title"><a href="#">A Guide On Mastering Slow Shutter Speeds</a></h2>
-        <p class="meta">Jennifer Patterson ~ 14th April 2011</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris. Mauris interdum, dolor in vulputate tincidunt, mauris lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<a href="#" class="more-link">Read The Full Article &raquo;</a></p>
+        <p class="meta"><a href="#">王二小 ~ 14th April 2011</a></p>
+        祝小郝和小丽白头到老~
       </div>
       <!--end post-->
       <div class="line"></div>
