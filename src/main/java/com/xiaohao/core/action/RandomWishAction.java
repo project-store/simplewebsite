@@ -19,10 +19,18 @@ import org.springframework.stereotype.Controller;
 @ParentPackage("web_front")
 @Scope("prototype")
 @Actions({@Action(value = ("/randomWishAction"), results = {
-        @Result(name = "init", location = "/WEB-INF/page/randomWish.jsp")})})
+        @Result(name = "init", location = "/WEB-INF/page/randomWish.jsp"),
+        @Result(name = "initAdd", location = "/WEB-INF/admin/innerpage/RandomWishAdmin.jsp"),
+        @Result(name = "list", location = "/WEB-INF/admin/innerpage/randomWishList.jsp")})})
 public class RandomWishAction extends BaseAction {
     @Override
     public String execute() throws Exception {
         return "init";
+    }
+    public String initAdd(){
+        return "initAdd";
+    }
+    public String list(){
+        return "list";
     }
 }

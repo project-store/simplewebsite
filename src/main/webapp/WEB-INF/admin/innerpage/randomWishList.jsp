@@ -19,16 +19,15 @@
 </HEAD>
 <BODY><BR>
 <h2>随即祝福管理</h2>
-<form action="adminModelAction!addModel" method="post">
+<BR>
 <TABLE class=tableborder cellSpacing=1 cellPadding=3 width="95%" align=center
        border="1">
-    <tr><td colspan="6">随即祝福<input type="hidden" name="adminModel.modelId" value="${adminModel.modelId}"/></td></tr>
-    <tr><td>祝福人:</td><td><input type="text" name="adminModel.modelName" value="${adminModel.modelName}"></td><td>祝福标题:</td><td><input name="adminModel.modelUrl" type="text" value="${adminModel.modelUrl}"/></td><td>头像Url:</td><td><input name="adminModel.orderBy" type="text" value="${adminModel.orderBy}"/></td></tr>
-    <tr><td>祝福内容:</td><td colspan="5"><textarea cols="30" rows="8" type="text" name="adminModel.modelName" value="${adminModel.modelName}"></textarea></td></tr>
-    <tr><td colspan="3"><input type="submit" value="添加"/></td><td colspan="3"><input type="reset" value="清空"/></td></tr>
+    <tr><td colspan="7">现存随即祝福</td></tr>
+    <tr><td>编号</td><td>祝福人</td><td>照片url:</td><td>照片</td><td>标题</td><td>内容</td><td>操作</td></tr>
+    <c:forEach items="${adminModelList}" var="model" varStatus="status">
+        <tr><td>${model.modelId}</td><td>${model.modelName}</td><td>${model.modelUrl}</td><td><c:if test="${model.useFlag eq 1}">是</c:if><c:if test="${model.useFlag eq 0}">否</c:if></td><td>${model.orderBy}</td><td><a href="adminModelAction!delModel?adminModel.modelId=${model.modelId}">删除</a>&nbsp;&nbsp;<a href="adminModelAction!updateModel?adminModel.modelId=${model.modelId}">更新</a></td></tr>
+    </c:forEach>
 </TABLE>
-</form>
-<BR>
 <BR>
 <TABLE cellSpacing=0 cellPadding=0 width="95%" align=center border=0>
 </TABLE>

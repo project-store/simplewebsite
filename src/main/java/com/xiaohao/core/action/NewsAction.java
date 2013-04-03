@@ -53,8 +53,12 @@ public class NewsAction extends BaseAction {
         AdminUser adminUser = (AdminUser) this.httpSession.getAttribute("adminUser");
         if (news != null&&news.getNewsId()!=null&&!"".equals(news.getNewsId())) {
             String content =news.getNewsContent();
+            String keyWord =news.getKeyWords();
+            String title = news.getNewsTitle();
             news = newsService.loadNewsById(news.getNewsId());
             news.setNewsContent(content);
+            news.setKeyWords(keyWord);
+            news.setNewsTitle(title);
             news.setAddUserId(adminUser.getUserId());
             news.setLastModifyDate(new Date());
             newsService.updateNews(news);
