@@ -1,10 +1,13 @@
 package com.xiaohao.core.action;
 
 import com.xiaohao.base.action.BaseAction;
+import com.xiaohao.base.model.RandomWish;
+import com.xiaohao.core.service.RandomWIshService;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Actions;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -23,6 +26,9 @@ import org.springframework.stereotype.Controller;
         @Result(name = "initAdd", location = "/WEB-INF/admin/innerpage/RandomWishAdmin.jsp"),
         @Result(name = "list", location = "/WEB-INF/admin/innerpage/randomWishList.jsp")})})
 public class RandomWishAction extends BaseAction {
+    @Autowired
+    RandomWIshService randomWIshService;
+    private RandomWish randomWish;
     @Override
     public String execute() throws Exception {
         return "init";
@@ -32,5 +38,13 @@ public class RandomWishAction extends BaseAction {
     }
     public String list(){
         return "list";
+    }
+
+    public RandomWish getRandomWish() {
+        return randomWish;
+    }
+
+    public void setRandomWish(RandomWish randomWish) {
+        this.randomWish = randomWish;
     }
 }
