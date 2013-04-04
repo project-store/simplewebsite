@@ -20,6 +20,7 @@ public class News extends BaseModel {
     private Date createDate;
     private Date lastModifyDate;
     private String keyWords;
+    private String shortContent;
     @Id
     @Column(name="newsId")
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -81,5 +82,13 @@ public class News extends BaseModel {
 
     public void setKeyWords(String keyWords) {
         this.keyWords = keyWords;
+    }
+    @Column(name = "shortContent")
+    public String getShortContent() {
+        return shortContent;
+    }
+
+    public void setShortContent(String shortContent) {
+        this.shortContent = shortContent;
     }
 }

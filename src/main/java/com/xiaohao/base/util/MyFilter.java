@@ -2,9 +2,6 @@ package com.xiaohao.base.util;
 
 import javax.servlet.*;
 import java.io.IOException;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -24,7 +21,7 @@ public class MyFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        request
+       chain.doFilter(request,response);
     }
 
     @Override
