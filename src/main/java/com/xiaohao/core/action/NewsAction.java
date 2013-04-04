@@ -30,6 +30,7 @@ import java.util.Date;
         @Result(name = "initAdd", location = "/WEB-INF/admin/innerpage/newsAdmin.jsp"),
         @Result(name = "addNews", location = "/WEB-INF/admin/innerpage/newsAdmin.jsp"),
         @Result(name = "listNews", location = "/WEB-INF/admin/innerpage/newsList.jsp"),
+        @Result(name = "viewNews", location = "/WEB-INF/page/viewNews.jsp"),
         @Result(name = "list", type = "json", params = {"root", "entityListJson"}),
         @Result(name = "ajaxPromise", type = "json", params = {"root", "entityJson"})})})
 public class NewsAction extends BaseAction {
@@ -73,7 +74,12 @@ public class NewsAction extends BaseAction {
         news=null;
         return "addNews";
     }
-
+    public String viewNews(){
+        if(news!=null&&news.getNewsId()!=null){
+            news =newsService.loadNewsById(news.getNewsId());
+        }
+        return "viewNews";
+    }
     public String listNews() {
         newsList = newsService.listAllNews();
         return "listNews";

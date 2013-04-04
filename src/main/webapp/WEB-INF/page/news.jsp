@@ -25,12 +25,12 @@
       <c:forEach items="${newsList.items}" var="news" varStatus="status">
       <div class="article">
           <!--标题和作者时间-->
-          <h2 class="title"><a href="#">${news.newsTitle}</a></h2>
+          <h2 class="title"><a href="newsAction!viewNews?news.newsId=${news.newsId}">${news.newsTitle}</a></h2>
         <p class="meta">小郝 ~ ${news.createDate}</p>
           <!--文章正文-->
          ${news.shortContent}
           <!--下面是文章链接-->
-        <a href="#" class="more-link">Read The Full Article &raquo;</a>
+        <a href="newsAction!viewNews?news.newsId=${news.newsId}" class="more-link">Read The Full Article &raquo;</a>
       </div>
 
       <!--end post-->

@@ -22,28 +22,8 @@
   <div id="main">
     <div id="content">
       <div class="article page">
-        <h2 class="title">Hi, I'm Jennifer and photography is my passion...</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris. Mauris interdum, dolor in vulputate tincidunt, mauris lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris lorem ipsum dolor sit.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris. Mauris interdum, dolor in vulputate tincidunt, mauris lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris lorem ipsum dolor sit.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris. Mauris interdum, dolor in vulputate tincidunt, mauris lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris lorem ipsum dolor sit.</p>
-        <h2>Recent Awards</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris. Mauris interdum, dolor in vulputate tincidunt, mauris lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris lorem ipsum dolor sit.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris. Mauris interdum, dolor in vulputate tincidunt, mauris lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris lorem ipsum dolor sit.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris. Mauris interdum, dolor in vulputate tincidunt, mauris lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris lorem ipsum dolor sit.</p>
-        <div id="testimonials">
-          <h2>Testimonials</h2>
-          <div class="testimonial">
-            <p><em>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris. Mauris interdum, dolor in vulputate tincidunt, mauris lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris lorem ipsum dolor sit.”</em><br />
-              <span class="author">Sarah Johnson</span> ~ <span class="company"><a href="#">Media Solutions</a></span></p>
-          </div>
-          <!--end testimonial-->
-          <div class="testimonial">
-            <p><em>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris. Mauris interdum, dolor in vulputate tincidunt, mauris lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris lorem ipsum dolor sit.”</em><br />
-              <span class="author">David Simpson</span> ~ <span class="company"><a href="#">Photography Studio</a></span></p>
-          </div>
-          <!--end testimonial-->
-        </div>
-        <!--end testimonials-->
+        <h2 class="title"><a href="#">${news.newsTitle}</a></h2>
+           ${news.newsContent}
       </div>
       <!--end post-->
     </div>
