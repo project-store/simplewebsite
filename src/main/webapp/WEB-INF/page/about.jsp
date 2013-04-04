@@ -22,7 +22,7 @@
   <div id="main">
     <div id="content">
       <div class="article page">
-        <h2 class="title">Hi, I'm Jennifer and photography is my passion...</h2>
+        <h2 class="title">Hi,我是小郝，我是一个程序员，这个站点是用来收集大家给我们的祝福的，谢谢</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris. Mauris interdum, dolor in vulputate tincidunt, mauris lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris lorem ipsum dolor sit.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris. Mauris interdum, dolor in vulputate tincidunt, mauris lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris lorem ipsum dolor sit.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris. Mauris interdum, dolor in vulputate tincidunt, mauris lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nibh mauris lorem ipsum dolor sit.</p>
@@ -53,10 +53,10 @@
           <div class="author-photo"><img src="http://xiaohao405-wordpress.stor.sinaapp.com/uploads/2013/04/weixinPic.jpg" alt="" width="230px" height="230px" /></div>
           <!--end author-photo-->
           <div id="author-details">
-              <h3><span class="status">Status: </span>Taking On New Clients</h3>
-              <p>I am currently available for work in covering portrait photography, photos of products for marketing purposes, weddings and other special events, and fashion and beauty.</p>
-              <p>I am willing to travel to meet with you to discuss your requirements. Please get in touch with me and we can arrange a suitable time to meet up.</p>
-              <p>My specialties are wedding photography, flowers, and portrait photography. I have been working predominantly in these areas for over 10 years now and have lots of happy clients.</p>
+              <h3><span class="status">亲: </span>关注小郝和小丽结婚啦~微信账号</h3>
+              <p>小郝和小丽就要结婚啦，非常感谢你能来这个站点给我们送上祝福。</p>
+              <p>扫一下上面的二维码图，关注我们结婚的公共账号，了解我们结婚最新动态，八卦一下恋爱史，看看婚纱照，更多功能你自己发现~</p>
+              <p>谢谢~</p>
           </div>
 
           <!--end author-details-->

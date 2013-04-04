@@ -1,5 +1,6 @@
 package com.xiaohao.core.service.impl;
 
+import com.xiaohao.base.dao.Page;
 import com.xiaohao.base.model.BestWish;
 import com.xiaohao.core.dao.BestWishDAO;
 import com.xiaohao.core.service.BestWishService;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
@@ -30,5 +32,12 @@ public class BestWishServiceImpl implements BestWishService {
     @Override
     public List loadAllWish() {
         return bestWishDAO.loadAll();
+    }
+
+    @Override
+    public Page loadWishesPage() {
+        LinkedHashMap hashMap =new LinkedHashMap();
+        hashMap.put("wishId","desc");
+        return bestWishDAO.queryForpage("select t from BestWish t where t.viewFlag =1",hashMap);
     }
 }

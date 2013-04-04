@@ -55,10 +55,12 @@ public class NewsAction extends BaseAction {
             String content =news.getNewsContent();
             String keyWord =news.getKeyWords();
             String title = news.getNewsTitle();
+            String shortContent=news.getShortContent();
             news = newsService.loadNewsById(news.getNewsId());
             news.setNewsContent(content);
             news.setKeyWords(keyWord);
             news.setNewsTitle(title);
+            news.setShortContent(shortContent);
             news.setAddUserId(adminUser.getUserId());
             news.setLastModifyDate(new Date());
             newsService.updateNews(news);

@@ -28,7 +28,9 @@
 				<p><c:if test="${news eq null}">添加</c:if><c:if test="${news != null}">更新</c:if>文章</p>
 				<form action="newsAction!addNews" method="post">
                  <p><input name="news.newsTitle" value="${news.newsTitle}"/><input type="hidden" name="news.newsId" value="${news.newsId}"></p>
-                 <p><input name="news.keyWords" value="${news.keyWords}"/></p><br/><br/>
+                 <p><input name="news.keyWords" value="${news.keyWords}"/></p><br/>
+                    <textarea name="news.shortContent" cols="70" rows="7">${news.shortContent}</textarea>
+                    <br/>
 				<!-- THE WKRTE TEXTAREA -->		        
 				<textarea name="news.newsContent"  cols="70" rows="20" class="wkrte-1">
                     ${news.newsContent}

@@ -28,7 +28,7 @@
           <h2 class="title"><a href="#">${news.newsTitle}</a></h2>
         <p class="meta">小郝 ~ ${news.createDate}</p>
           <!--文章正文-->
-         ${news.newsContent}
+         ${news.shortContent}
           <!--下面是文章链接-->
         <a href="#" class="more-link">Read The Full Article &raquo;</a>
       </div>

@@ -1,5 +1,6 @@
 package com.xiaohao.core.service;
 
+import com.xiaohao.base.dao.Page;
 import com.xiaohao.base.model.BestWish;
 
 import java.util.List;
@@ -14,4 +15,5 @@ import java.util.List;
 public interface BestWishService {
     public Long addBestWish(BestWish bestWish);
     public List loadAllWish();
+    public Page loadWishesPage();
 }

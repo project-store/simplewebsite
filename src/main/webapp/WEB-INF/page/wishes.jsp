@@ -21,13 +21,36 @@
   <!--end header-->
   <div id="main">
     <div id="content">
-      <div class="article">
-        <p class="meta"><a href="#">王二小 ~ 14th April 2011</a></p>
-        祝小郝和小丽白头到老~
+        <c:forEach items="${bestWishPage.items}" var="wish" varStatus="status">
+        <div class="article">
+        <p class="meta"><a href="#">${wish.sendUserName} ~ ${wish.createDate}</a></p>
+        ${wish.wishContent}
       </div>
       <!--end post-->
       <div class="line"></div>
-        <span class="pageNumStyle"><a href="#" >1</a></span><span class="pageNumStyle"><a href="#">2</a></span><span class="pageNumStyle"><a href="#">3</a></span><span class="pageNumStyle"><a href="#">下一页</a></span>
+        </c:forEach>
+        <!---此处做一个分页导航----->
+        <pg:pager url="bestWishAction!init"
+                  items="${bestWishPage.total}" maxPageItems="10" maxIndexPages="5"
+                  export="currentPageNumber=pageNumber">
+            <pg:prev>
+                <span class="pageNumStyle"><a href="${pageUrl }">上一页</a></span>
+            </pg:prev>
+            <pg:pages>
+                <c:choose>
+                    <c:when test="${currentPageNumber eq pageNumber }">
+                        <span class="pageNumStyle" style="border:1px solid red"><a href="#">${pageNumber }</a></span>
+                    </c:when>
+                    <c:otherwise>
+                        <span class="pageNumStyle"><a href="${pageUrl }">${pageNumber }</a></span>
+                    </c:otherwise>
+                </c:choose>
+            </pg:pages>
+            <pg:next>
+                <span class="pageNumStyle"><a href="${pageUrl }">下一页</a></span>
+            </pg:next>
+        </pg:pager>
+
     </div>
     <!--end content-->
       <s:action name="randomWishAction" ignoreContextParams="true" executeResult="true"></s:action>

@@ -1,6 +1,7 @@
 package com.xiaohao.base.model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,11 +15,12 @@ import javax.persistence.*;
 public class BestWish extends BaseModel {
     private Long wishId;
     private String sendUserName;
+    private Date createDate;
     private String email;
     private String mobile;
     private String title;
     private String wishContent;
-    private String viewFlag;
+    private Integer viewFlag;
     @Id
     @Column(name="wishId")
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -70,11 +72,22 @@ public class BestWish extends BaseModel {
         this.wishContent = wishContent;
     }
     @Column(name = "viewFlag")
-    public String getViewFlag() {
+    public Integer getViewFlag() {
         return viewFlag;
     }
 
-    public void setViewFlag(String viewFlag) {
+    public void setViewFlag(Integer viewFlag) {
         this.viewFlag = viewFlag;
+    }
+
+
+
+    @Column(name = "createDate")
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
     }
 }

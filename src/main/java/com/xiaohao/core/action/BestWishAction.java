@@ -1,6 +1,7 @@
 package com.xiaohao.core.action;
 
 import com.xiaohao.base.action.BaseAction;
+import com.xiaohao.base.dao.Page;
 import com.xiaohao.base.model.BestWish;
 import com.xiaohao.core.service.BestWishService;
 import org.apache.struts2.convention.annotation.Action;
@@ -10,6 +11,8 @@ import org.apache.struts2.convention.annotation.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+
+import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,20 +26,24 @@ import org.springframework.stereotype.Controller;
 @Scope("prototype")
 @Actions({ @Action(value = ( "/bestWishAction" ), results = {
         @Result(name = "init", location = "/WEB-INF/page/wishes.jsp"),
-        @Result(name = "tb_posordergather_list", location = "/WEB-INF/pages/tb_posordergather_list.jsp"),
+        @Result(name = "addBestWish", location = "/WEB-INF/page/sendWishOk.jsp"),
         @Result(name = "list", type = "json", params = { "root", "entityListJson" }),
         @Result(name = "ajaxPromise", type = "json", params = { "root", "entityJson" }) }) })
 public class BestWishAction extends BaseAction {
     private String flag;
     private BestWish bestWish;
+    private Page<BestWish> bestWishPage;
     @Autowired
     BestWishService bestWishService;
     public String init(){
+        bestWishPage = bestWishService.loadWishesPage();
         flag="wishes";
         return "init";
     }
     public String addBestWish(){
         if(bestWish!=null){
+            bestWish.setCreateDate(new Date());
+            bestWish.setViewFlag(1);
             bestWishService.addBestWish(bestWish);
         }
         flag="wishes";
@@ -56,5 +63,13 @@ public class BestWishAction extends BaseAction {
 
     public void setBestWish(BestWish bestWish) {
         this.bestWish = bestWish;
+    }
+
+    public Page<BestWish> getBestWishPage() {
+        return bestWishPage;
+    }
+
+    public void setBestWishPage(Page<BestWish> bestWishPage) {
+        this.bestWishPage = bestWishPage;
     }
 }
