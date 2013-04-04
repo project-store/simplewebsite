@@ -25,7 +25,7 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     public Page<News> listAllNews() {
-        String hql = "select t from News t";
+        String hql = "select t from News t order by t.createDate desc";
         return newsDAO.queryForpage(hql);
     }
 
