@@ -37,7 +37,7 @@ public class BestWishAction extends BaseAction {
     BestWishService bestWishService;
     public String init(){
         bestWishPage = bestWishService.loadWishesPage();
-        flag="wishes";
+        flag="sendWish";
         return "init";
     }
     public String addBestWish(){
