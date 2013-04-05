@@ -1,6 +1,10 @@
 package com.xiaohao.core.service;
 
+import com.xiaohao.base.dao.Page;
 import com.xiaohao.base.model.RandomWish;
+
+import java.util.Hashtable;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -10,5 +14,9 @@ import com.xiaohao.base.model.RandomWish;
  * To change this template use File | Settings | File Templates.
  */
 public interface RandomWIshService {
-    public RandomWish pickAWish();
+    public RandomWish pickAWish(List<Long> randomIdList,Hashtable<Long,RandomWish> randomWishMap);
+    public Long addRandomWish(RandomWish randomWish);
+    public Page<RandomWish> listRandomWishPage();
+    public void updateRandomWish(RandomWish randomWish);
+    public List loadRandomWishAll();
 }

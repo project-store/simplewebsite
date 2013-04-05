@@ -19,6 +19,12 @@
     <![endif]-->
 <!--[if IE 7]><link type="text/css" rel="stylesheet" type="text/css" href="styles/ie7.css" /><![endif]-->
 <!--[if IE 8]><link type="text/css" rel="stylesheet" type="text/css" href="styles/ie8.css" /><![endif]-->
+    <style>
+        .slideshow-container img{
+            width: 600px;
+            height: 350px
+        }
+    </style>
 </head>
 <body>
 <div id="wrap">
@@ -38,13 +44,9 @@
     <div class="navigation-container">
       <div id="thumbs" class="navigation"> <a class="pageLink prev" style="visibility: hidden;" href="#"></a>
         <ul class="thumbs noscript">
-          <li><a class="thumb" href="images/photos/600x350.gif"><img src="images/photos/130x75.gif" /></a></li>
-          <li><a class="thumb" href="images/photos/600x350.gif"><img src="images/photos/130x75.gif" /></a></li>
-          <li><a class="thumb" href="images/photos/600x350.gif"><img src="images/photos/130x75.gif" /></a></li>
-          <li><a class="thumb" href="images/photos/600x350.gif"><img src="images/photos/130x75.gif" /></a></li>
-          <li><a class="thumb" href="images/photos/600x350.gif"><img src="images/photos/130x75.gif" /></a></li>
-          <li><a class="thumb" href="images/photos/600x350.gif"><img src="images/photos/130x75.gif" /></a></li>
-          <li><a class="thumb" href="images/photos/600x350.gif"><img src="images/photos/130x75.gif" /></a></li>
+            <c:forEach items="${indexScrollPicList}" var="indexPic" varStatus="status">
+          <li><a class="thumb" href="${indexPic.bicPicUrl}"><img src="${indexPic.smallPicUrl}" width="130px" height="75px" /></a></li>
+            </c:forEach>
         </ul>
         <a class="pageLink next" style="visibility: hidden;" href="#"></a></div>
       <!--end thumbs-->

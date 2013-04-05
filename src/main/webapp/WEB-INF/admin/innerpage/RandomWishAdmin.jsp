@@ -19,12 +19,16 @@
 </HEAD>
 <BODY><BR>
 <h2>随即祝福管理</h2>
-<form action="adminModelAction!addModel" method="post">
+<form action="randomWishAction!addRandomWish" method="post">
 <TABLE class=tableborder cellSpacing=1 cellPadding=3 width="95%" align=center
        border="1">
-    <tr><td colspan="6">随即祝福<input type="hidden" name="adminModel.modelId" value="${adminModel.modelId}"/></td></tr>
-    <tr><td>祝福人:</td><td><input type="text" name="adminModel.modelName" value="${adminModel.modelName}"></td><td>祝福标题:</td><td><input name="adminModel.modelUrl" type="text" value="${adminModel.modelUrl}"/></td><td>头像Url:</td><td><input name="adminModel.orderBy" type="text" value="${adminModel.orderBy}"/></td></tr>
-    <tr><td>祝福内容:</td><td colspan="5"><textarea cols="30" rows="8" type="text" name="adminModel.modelName" value="${adminModel.modelName}"></textarea></td></tr>
+    <tr><td colspan="6">随即祝福<input type="hidden" name="randomWish.modelId" value="${randomWish.randomWishId}"/></td></tr>
+    <tr>
+        <td>祝福人:</td>
+        <td><input type="text" name="randomWish.sendWishUserName" value="${randomWish.sendWishUserName}"></td>
+        <td>祝福标题:</td><td><input name="randomWish.wishTitle" type="text" value="${randomWish.wishTitle}"/>
+    </td><td>头像Url:</td><td><input name="randomWish.randomWishPicUrl" type="text" value="${randomWish.randomWishPicUrl}"/></td></tr>
+    <tr><td>祝福内容:</td><td colspan="5"><textarea cols="30" rows="8" type="text" name="randomWish.wishContent" value="${randomWish.wishContent}"></textarea></td></tr>
     <tr><td colspan="3"><input type="submit" value="添加"/></td><td colspan="3"><input type="reset" value="清空"/></td></tr>
 </TABLE>
 </form>

@@ -11,7 +11,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "indexScrollPic")
-public class IndexScrollPic {
+public class IndexScrollPic extends BaseModel {
     private Long picId;
     private String bicPicUrl;
     private String smallPicUrl;
@@ -20,6 +20,7 @@ public class IndexScrollPic {
     private String picDescribe;
     @Id
     @Column(name = "picId")
+    @GeneratedValue(strategy=GenerationType.AUTO)
     public Long getPicId() {
         return picId;
     }

@@ -1,6 +1,7 @@
 package com.xiaohao.base.util;
 
 import com.xiaohao.base.model.AdminUser;
+import com.xiaohao.base.model.RandomWish;
 import com.xiaohao.core.dao.UserDao;
 import com.xiaohao.core.service.AdminUserService;
 import com.xiaohao.core.service.RandomWIshService;
@@ -33,5 +34,7 @@ public class BootStrap {
            adminUser.setUserName("superhao");
            adminUserService.addAdminUser(adminUser);
        }
+       List<RandomWish> randomWishList = randomWIshService.loadRandomWishAll();
+
     }
 }
