@@ -19,4 +19,6 @@ public interface RandomWIshService {
     public Page<RandomWish> listRandomWishPage();
     public void updateRandomWish(RandomWish randomWish);
     public List loadRandomWishAll();
+    public void deleteRandomWish(RandomWish randomWish);
+    public RandomWish loadRandomWishById(Long wishId);
 }

@@ -13,6 +13,10 @@
         FONT-WEIGHT: bold;
         COLOR: #0099ff
     }
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
     </STYLE>
 
     <META content="MSHTML 6.00.2900.5726" name=GENERATOR>
@@ -37,7 +41,7 @@
 </TABLE>
 </form>
 <BR>
-<TABLE class=tableborder cellSpacing=1 cellPadding=3 width="95%" align=center
+<TABLE class=tableborder cellSpacing="0" cellPadding="0" width="95%" align=center
        border="1">
     <tr><td colspan="8">现存图片</td></tr>
     <tr><td width="5">编号</td>
@@ -54,7 +58,7 @@
             <td>${indexPic.picName}</td>
             <td>${indexPic.bicPicUrl}</td>
             <td>${indexPic.smallPicUrl}</td>
-            <td><img src="${indexPic.smallPicUrl}" alt="" width="20px" height="20px"></td>
+            <td style="padding: 0px;line-height:1px" ><img src="${indexPic.smallPicUrl}" alt="" width="50px" height="35px" style="margin: 0px;display: block;vertical-align: bottom;border: 0px"></td>
             <td>${indexPic.picDescribe}</td>
             <td>${indexPic.orderBy}</td>
 

@@ -56,4 +56,14 @@ public class RandomWishServiceImpl implements RandomWIshService {
     public List loadRandomWishAll() {
         return randomWishDAO.loadAll();
     }
+
+    @Override
+    public void deleteRandomWish(RandomWish randomWish) {
+        randomWishDAO.delete(randomWish);
+    }
+
+    @Override
+    public RandomWish loadRandomWishById(Long wishId) {
+        return  randomWishDAO.get(wishId);
+    }
 }

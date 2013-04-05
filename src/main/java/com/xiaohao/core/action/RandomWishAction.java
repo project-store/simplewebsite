@@ -64,7 +64,6 @@ public class RandomWishAction extends BaseAction {
 
             } else {
                 randomWIshService.updateRandomWish(randomWish);
-                randomMap.put(randomWish.getRandomWishId(), null);
                 randomMap.put(randomWish.getRandomWishId(), randomWish);
             }
 
@@ -73,7 +72,23 @@ public class RandomWishAction extends BaseAction {
         randomWish = null;
         return "initAdd";
     }
-
+    public String delRandomWish(){
+        if(randomWish!=null&&randomWish.getRandomWishId()!=null){
+            randomWIshService.deleteRandomWish(randomWish);
+            List<Long> randomIdList = (List<Long>) this.servletContext.getAttribute("RandomWishIdList");
+            Hashtable randomMap = (Hashtable) this.servletContext.getAttribute("RandomWishMap");
+            randomIdList.remove(randomWish.getRandomWishId());
+            randomMap.remove(randomWish.getRandomWishId());
+        }
+        randomWishPage = randomWIshService.listRandomWishPage();
+        return   "list";
+    }
+    public String initUpdate(){
+        if(randomWish!=null&&randomWish.getRandomWishId()!=null){
+            randomWish = randomWIshService.loadRandomWishById(randomWish.getRandomWishId());
+        }
+        return "initAdd";
+    }
     public RandomWish getRandomWish() {
         return randomWish;
     }

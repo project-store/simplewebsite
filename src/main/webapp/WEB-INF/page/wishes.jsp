@@ -24,7 +24,7 @@
         <c:forEach items="${bestWishPage.items}" var="wish" varStatus="status">
         <div class="article">
         <p class="meta"><a href="#">${wish.sendUserName} ~ ${wish.createDate}</a></p>
-        ${wish.wishContent}
+        <div style="width: 600px;word-break: break-all;">${wish.wishContent}</div>
       </div>
       <!--end post-->
       <div class="line"></div>

@@ -32,7 +32,7 @@
             <td>${wish.randomWishPicUrl}</td>
             <td><img src="${wish.randomWishPicUrl}" width="20px" height="20px"></td>
             <td>${wish.wishContent}</td>
-            <td><a href="adminModelAction!delModel?adminModel.modelId=${model.modelId}">删除</a>&nbsp;&nbsp;<a href="adminModelAction!updateModel?adminModel.modelId=${model.modelId}">更新</a></td></tr>
+            <td><a href="randomWishAction!delRandomWish?randomWish.randomWishId=${wish.randomWishId}">删除</a>&nbsp;&nbsp;<a href="randomWishAction!initUpdate?randomWish.randomWishId=${wish.randomWishId}">更新</a></td></tr>
     </c:forEach>
     <tr> <td colspan="7" align="center">
         <pg:pager url="randomWishAction!list"
