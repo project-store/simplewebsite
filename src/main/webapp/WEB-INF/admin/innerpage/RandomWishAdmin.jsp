@@ -22,7 +22,7 @@
 <form action="randomWishAction!addRandomWish" method="post">
 <TABLE class=tableborder cellSpacing=1 cellPadding=3 width="95%" align=center
        border="1">
-    <tr><td colspan="6">随即祝福<input type="hidden" name="randomWish.modelId" value="${randomWish.randomWishId}"/></td></tr>
+    <tr><td colspan="6">随即祝福<input type="hidden" name="randomWish.randomWishId" value="${randomWish.randomWishId}"/></td></tr>
     <tr>
         <td>祝福人:</td>
         <td><input type="text" name="randomWish.sendWishUserName" value="${randomWish.sendWishUserName}"></td>

@@ -25,7 +25,7 @@ public class RandomWishInitListenner implements ServletContextListener {
         List<RandomWish> randomWishList = randomWIshService.loadRandomWishAll();
         List<Long> randomIdList = new ArrayList<Long>();
         Hashtable<Long,RandomWish> randomWishMap = new Hashtable();
-        for(int i=0;i<randomIdList.size();i++){
+        for(int i=0;i<randomWishList.size();i++){
             RandomWish temp = randomWishList.get(i);
             randomIdList.add(temp.getRandomWishId());
             randomWishMap.put(temp.getRandomWishId(),temp);
