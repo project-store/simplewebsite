@@ -27,6 +27,7 @@ import java.util.Date;
 @Actions({ @Action(value = ( "/bestWishAction" ), results = {
         @Result(name = "init", location = "/WEB-INF/page/wishes.jsp"),
         @Result(name = "addBestWish", location = "/WEB-INF/page/sendWishOk.jsp"),
+        @Result(name = "initAdmin", location = "/WEB-INF/admin/innerpage/bestWishAdmin.jsp"),
         @Result(name = "list", type = "json", params = { "root", "entityListJson" }),
         @Result(name = "ajaxPromise", type = "json", params = { "root", "entityJson" }) }) })
 public class BestWishAction extends BaseAction {
@@ -48,6 +49,33 @@ public class BestWishAction extends BaseAction {
         }
         flag="wishes";
         return "addBestWish";
+    }
+    public String initAdmin(){
+        bestWishPage =bestWishService.loadWishAllPage();
+        return "initAdmin";
+    }
+    public String delBestWish(){
+        if(bestWish!=null&&bestWish.getWishId()!=null){
+            bestWishService.deleteBestWish(bestWish.getWishId());
+        }
+        bestWishPage = bestWishService.loadWishAllPage();
+        return "initAdmin";
+    }
+    public String changeBestWishFlag(){
+         if(bestWish!=null&&bestWish.getWishId()!=null){
+             bestWish =bestWishService.loadBestWishById(bestWish.getWishId());
+             if(bestWish!=null){
+                 if(1==bestWish.getViewFlag()){
+                     bestWish.setViewFlag(0);
+                     bestWishService.updateBestWish(bestWish);
+                 }else if(0==bestWish.getViewFlag()){
+                     bestWish.setViewFlag(1);
+                     bestWishService.updateBestWish(bestWish);
+                 }
+             }
+         }
+        bestWishPage =bestWishService.loadWishAllPage();
+        return "initAdmin";
     }
     public String getFlag() {
         return flag;

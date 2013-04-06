@@ -18,18 +18,34 @@
     <META content="MSHTML 6.00.2900.5726" name=GENERATOR>
 </HEAD>
 <BODY><BR>
-<h2>文章列表展示模块</h2>
+<h2>祝福列表展示模块</h2>
 
     <TABLE class=tableborder cellSpacing=1 cellPadding=3 width="95%" align=center
            border="1">
-        <tr><td colspan="6">现存文章</td></tr>
-        <tr><td>文章编号</td><td>文章名称</td><td>创建时间</td><td>关键字</td><td>上次修改时间</td><td>操作</td></tr>
-        <c:forEach items="${newsList.items}" var="news" varStatus="status">
-            <tr><td>${news.newsId}</td><td>${news.newsTitle}</td><td>${news.createDate}</td><td>${news.keyWords}</td><td>${news.lastModifyDate}</td><td><a href="newsAction!delNews?news.newsId=${news.newsId}">删除</a>&nbsp;&nbsp;<a href="newsAction!updateNews?news.newsId=${news.newsId}">更新</a></td></tr>
+        <tr><td colspan="8">现存祝福</td></tr>
+        <tr><td width="15">编号</td><td width="100">发送人</td><td width="120">电话</td><td>email</td><td width="400">祝福</td><td width="135">创建时间</td><td width="80">是否可见</td><td width="100">操作</td></tr>
+        <c:forEach items="${bestWishPage.items}" var="wish" varStatus="status">
+            <tr>
+                <td>${wish.wishId}</td>
+                <td>${wish.sendUserName}</td>
+                <td>${wish.mobile}</td>
+                <td>${wish.email}</td>
+                <td>${wish.wishContent}</td>
+                <td>${wish.createDate}</td>
+                <td><c:if test="${wish.viewFlag eq 1}">可见</c:if><c:if test="${wish.viewFlag eq 0}">隐藏</c:if> </td>
+                <td>
+                    <a href="bestWishAction!delBestWish?bestWish.wishId=${wish.wishId}">
+                        删除
+                    </a>&nbsp;&nbsp;
+                    <a href="bestWishAction!changeBestWishFlag?bestWish.wishId=${wish.wishId}">
+                        <c:if test="${wish.viewFlag eq 1}">隐藏</c:if><c:if test="${wish.viewFlag eq 0}">显示</c:if>
+                    </a>
+                </td>
+            </tr>
         </c:forEach>
-        <tr> <td colspan="6" align="center">
-<pg:pager url="newsAction!listNews"
-          items="${newsList.total}" maxPageItems="10" maxIndexPages="5"
+        <tr> <td colspan="8" align="center">
+<pg:pager url="bestWishAction!initAdmin"
+          items="${bestWishPage.total}" maxPageItems="10" maxIndexPages="5"
           export="currentPageNumber=pageNumber">
     <pg:prev>
         <a href="${pageUrl }">上一页</a>

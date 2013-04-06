@@ -16,4 +16,8 @@ public interface BestWishService {
     public Long addBestWish(BestWish bestWish);
     public List loadAllWish();
     public Page loadWishesPage();
+    public void deleteBestWish(Long bestId);
+    public BestWish loadBestWishById(Long bestId);
+    public void updateBestWish(BestWish bestWish);
+    public Page loadWishAllPage();
 }

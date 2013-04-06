@@ -38,4 +38,26 @@ public class BestWishServiceImpl implements BestWishService {
         hashMap.put("wishId","desc");
         return bestWishDAO.queryForpage("select t from BestWish t where t.viewFlag =1",hashMap);
     }
+
+    @Override
+    public void deleteBestWish(Long bestId) {
+        bestWishDAO.deleteByKey(bestId);
+    }
+
+    @Override
+    public BestWish loadBestWishById(Long bestId) {
+        return bestWishDAO.get(bestId);
+    }
+
+    @Override
+    public void updateBestWish(BestWish bestWish) {
+        bestWishDAO.update(bestWish);
+    }
+
+    @Override
+    public Page loadWishAllPage() {
+        LinkedHashMap hashMap =new LinkedHashMap();
+        hashMap.put("wishId","desc");
+        return bestWishDAO.queryForpage("select t from BestWish t",hashMap);
+    }
 }
