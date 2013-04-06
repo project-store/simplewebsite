@@ -3,7 +3,12 @@ package com.xiaohao.core.dao.impl;
 import com.xiaohao.base.dao.impl.GenericDAOHibernateImpl;
 import com.xiaohao.base.model.Event;
 import com.xiaohao.core.dao.EventDAO;
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,4 +19,11 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class EventDAOImpl extends GenericDAOHibernateImpl<Event,Long> implements EventDAO {
+    @Override
+    public List<Event> loadAllEventByCateId(Long cateId) {
+        Criteria criteria = this.createCriteria();
+        criteria.add(Restrictions.eq("eventCategoryId",cateId));
+        criteria.addOrder(Order.desc("createDate"));
+        return criteria.list();
+    }
 }
