@@ -66,8 +66,8 @@
             <td><a href="indexAction!delIndexPic?indexScrollPic.picId=${indexPic.picId}">删除</a>&nbsp;&nbsp;<a href="indexAction!updateIndexPic?indexScrollPic.picId=${indexPic.picId}">更新</a></td></tr>
     </c:forEach>
     <tr> <td colspan="8" align="center">
-        <pg:pager url="newsAction!listNews"
-                  items="${newsList.total}" maxPageItems="10" maxIndexPages="5"
+        <pg:pager url="indexAction!indexPicAdmin"
+                  items="${indexScrollPicPage.total}" maxPageItems="10" maxIndexPages="5"
                   export="currentPageNumber=pageNumber">
             <pg:prev>
                 <a href="${pageUrl }">上一页</a>
