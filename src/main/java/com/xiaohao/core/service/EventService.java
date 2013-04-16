@@ -18,6 +18,8 @@ public interface EventService {
     public void delEvent(Long eventId);
     public void updateEvnet(Event event);
     public List<Event> loadAllEventByCateId(Long CategoryId);
+
+
     public List<EventCategory>  loadAllEvnetCategory();
     public Long addEventCate(EventCategory eventCategory);
     public void delEventCate(Long eventCateId);

@@ -1,5 +1,7 @@
 package com.xiaohao.core.service;
 
+import com.xiaohao.base.model.ShareConfig;
+
 /**
  * Created with IntelliJ IDEA.
  * User: SuperHao
@@ -8,4 +10,7 @@ package com.xiaohao.core.service;
  * To change this template use File | Settings | File Templates.
  */
 public interface ShareConfigService {
+    public Long addShareConfig(ShareConfig shareConfig);
+
+    public void updateShareConfig(ShareConfig shareConfig);
 }
