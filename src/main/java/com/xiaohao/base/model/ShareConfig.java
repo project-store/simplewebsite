@@ -8,17 +8,17 @@ package com.xiaohao.base.model;
  * To change this template use File | Settings | File Templates.
  */
 public class ShareConfig extends BaseModel {
-    private Integer configId;
+    private Long configId;
     private String url;
     private String title;
     private String summry;
     private String picUrl;
 
-    public Integer getConfigId() {
+    public Long getConfigId() {
         return configId;
     }
 
-    public void setConfigId(Integer configId) {
+    public void setConfigId(Long configId) {
         this.configId = configId;
     }
 

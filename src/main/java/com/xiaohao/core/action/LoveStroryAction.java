@@ -29,6 +29,11 @@ public class LoveStroryAction extends BaseAction {
         flag="loveStory";
         return "init";
     }
+    //分类管理
+    public String initAdminCategory(){
+        return "initAdminCategory";
+    }
+
     public String historyList(){
         return "historyList";
     }

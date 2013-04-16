@@ -18,7 +18,7 @@
     <META content="MSHTML 6.00.2900.5726" name=GENERATOR>
 </HEAD>
 <BODY><BR>
-<h2>文章列表展示模块</h2>
+<h2>恋爱史分类管理页面</h2>
 
     <TABLE class=tableborder cellSpacing=1 cellPadding=3 width="95%" align=center
            border="1">
