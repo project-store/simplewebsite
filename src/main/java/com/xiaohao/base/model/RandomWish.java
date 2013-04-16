@@ -41,7 +41,7 @@ public class RandomWish extends BaseModel {
     public void setWishTitle(String wishTitle) {
         this.wishTitle = wishTitle;
     }
-    @Column(name = "wishContent")
+    @Column(name = "wishContent",length = 2048)
     public String getWishContent() {
         return wishContent;
     }

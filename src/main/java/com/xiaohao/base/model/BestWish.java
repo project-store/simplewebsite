@@ -63,7 +63,7 @@ public class BestWish extends BaseModel {
     public void setTitle(String title) {
         this.title = title;
     }
-    @Column(name="wishContent")
+    @Column(name="wishContent",length = 2048)
     public String getWishContent() {
         return wishContent;
     }

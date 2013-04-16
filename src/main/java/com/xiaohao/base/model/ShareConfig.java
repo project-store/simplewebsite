@@ -1,5 +1,7 @@
 package com.xiaohao.base.model;
 
+import javax.persistence.*;
+
 /**
  * Created with IntelliJ IDEA.
  * User: SuperHao
@@ -7,13 +9,18 @@ package com.xiaohao.base.model;
  * Time: 下午1:28
  * To change this template use File | Settings | File Templates.
  */
+@Entity
+@Table(name = "shareConfig")
 public class ShareConfig extends BaseModel {
     private Long configId;
     private String url;
     private String title;
-    private String summry;
+    private String summary;
     private String picUrl;
 
+    @Id
+    @Column(name="configId")
+    @GeneratedValue(strategy=GenerationType.AUTO)
     public Long getConfigId() {
         return configId;
     }
@@ -21,7 +28,7 @@ public class ShareConfig extends BaseModel {
     public void setConfigId(Long configId) {
         this.configId = configId;
     }
-
+    @Column(name = "url")
     public String getUrl() {
         return url;
     }
@@ -29,7 +36,7 @@ public class ShareConfig extends BaseModel {
     public void setUrl(String url) {
         this.url = url;
     }
-
+    @Column(name = "title")
     public String getTitle() {
         return title;
     }
@@ -37,15 +44,18 @@ public class ShareConfig extends BaseModel {
     public void setTitle(String title) {
         this.title = title;
     }
-
-    public String getSummry() {
-        return summry;
+    @Column(name = "summary")
+    public String getSummary() {
+        return summary;
     }
 
-    public void setSummry(String summry) {
-        this.summry = summry;
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 
+
+
+    @Column(name = "picUrl")
     public String getPicUrl() {
         return picUrl;
     }
