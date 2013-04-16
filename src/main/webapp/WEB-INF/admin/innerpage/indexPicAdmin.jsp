@@ -85,7 +85,7 @@
             <pg:next>
                 <a href="${pageUrl }">下一页</a>
             </pg:next>
-            当前:${currentPageNumber}/总共:${newsList.pageCount}
+            当前:${currentPageNumber}/总共:${indexScrollPicPage.pageCount}
         </pg:pager>
     </td></tr>
 </TABLE>
