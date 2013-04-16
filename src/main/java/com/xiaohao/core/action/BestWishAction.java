@@ -3,7 +3,9 @@ package com.xiaohao.core.action;
 import com.xiaohao.base.action.BaseAction;
 import com.xiaohao.base.dao.Page;
 import com.xiaohao.base.model.BestWish;
+import com.xiaohao.base.model.ShareConfig;
 import com.xiaohao.core.service.BestWishService;
+import com.xiaohao.core.service.ShareConfigService;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Actions;
 import org.apache.struts2.convention.annotation.ParentPackage;
@@ -34,8 +36,11 @@ public class BestWishAction extends BaseAction {
     private String flag;
     private BestWish bestWish;
     private Page<BestWish> bestWishPage;
+    private ShareConfig shareConfig;
     @Autowired
     BestWishService bestWishService;
+    @Autowired
+    ShareConfigService shareConfigService;
     public String init(){
         bestWishPage = bestWishService.loadWishesPage();
         flag="wishes";
@@ -47,7 +52,8 @@ public class BestWishAction extends BaseAction {
             bestWish.setViewFlag(1);
             bestWishService.addBestWish(bestWish);
         }
-        flag="wishes";
+        shareConfig = shareConfigService.loadShareConfig();
+        flag="sendWish";
         return "addBestWish";
     }
     public String initAdmin(){
@@ -99,5 +105,13 @@ public class BestWishAction extends BaseAction {
 
     public void setBestWishPage(Page<BestWish> bestWishPage) {
         this.bestWishPage = bestWishPage;
+    }
+
+    public ShareConfig getShareConfig() {
+        return shareConfig;
+    }
+
+    public void setShareConfig(ShareConfig shareConfig) {
+        this.shareConfig = shareConfig;
     }
 }

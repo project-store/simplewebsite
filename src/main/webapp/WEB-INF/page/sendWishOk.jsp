@@ -40,10 +40,10 @@
               var jiathis_config={
                   data_track_clickback:true,
                   sm:"tqq,tsina,renren,kaixin001,meilishuo,hi,digu,miliao,weixin,qzone",
-                  url:"http://localhost",
-                  summary:"小郝和小丽结婚啦，大家一起送祝福",
-                  title:"#小郝和小丽结婚啦~#",
-                  pic:"http://loalhost/w.jpg",
+                  url:"${shareConfig.url}",
+                  summary:"${shareConfig.summary}",
+                  title:"#${shareConfig.title}#",
+                  pic:"${shareConfig.picUrl}",
                   hideMore:false
               }
           </script>

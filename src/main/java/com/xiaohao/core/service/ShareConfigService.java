@@ -13,4 +13,6 @@ public interface ShareConfigService {
     public Long addShareConfig(ShareConfig shareConfig);
 
     public void updateShareConfig(ShareConfig shareConfig);
+
+    public ShareConfig loadShareConfig();
 }

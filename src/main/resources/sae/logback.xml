@@ -29,7 +29,7 @@
 		</rollingPolicy>
 	</appender>
 	<!-- Logger -->
-	<logger name="com.xiaohao" level="DEBUG"/>
+	<logger name="com.xiaohao" level="ERROR"/>
 	<root level="INFO">
 		<appender-ref ref="console"/>
 		<appender-ref ref="logfile"/>

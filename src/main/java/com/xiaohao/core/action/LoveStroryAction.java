@@ -1,6 +1,7 @@
 package com.xiaohao.core.action;
 
 import com.xiaohao.base.action.BaseAction;
+import com.xiaohao.base.dao.Page;
 import com.xiaohao.base.model.Event;
 import com.xiaohao.base.model.EventCategory;
 import com.xiaohao.core.service.EventService;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -37,6 +39,7 @@ public class LoveStroryAction extends BaseAction {
     private String flag;
     private List<EventCategory> eventCategoryList;
     private EventCategory eventCategory;
+    private Page<Event> eventPage;
     private Event event;
     public String init(){
         flag="loveStory";
@@ -44,25 +47,30 @@ public class LoveStroryAction extends BaseAction {
     }
     //分类管理
     public String initAdminCategory(){
+        eventCategoryList = eventService.loadAllEvnetCategory();
         return "initAdminCategory";
     }
-    //初始化分类管理
+    //初始化事件管理
     public String initAdminEvent(){
-
-        eventCategoryList =eventService.loadAllEvnetCategory();
+        eventPage =eventService.loadAllEvent();
         return "initAdminEvent";
     }
     //
     public String addEventCategory(){
+        if(eventCategory!=null){
+            eventCategory.setCreateDate(new Date());
+        }
         eventService.addEventCate(eventCategory);
-        return "";
+        eventCategoryList =eventService.loadAllEvnetCategory();
+        return "initAdminCategory";
     }
     //
     public String delEventCategory(){
         if(eventCategory!=null&&eventCategory.getEventCategoryId()!=null){
             eventService.delEventCate(eventCategory.getEventCategoryId());
         }
-        return "";
+        eventCategoryList =eventService.loadAllEvnetCategory();
+        return "initAdminCategory";
     }
     //
     public String addEvent(){
@@ -102,5 +110,21 @@ public class LoveStroryAction extends BaseAction {
 
     public void setEventCategory(EventCategory eventCategory) {
         this.eventCategory = eventCategory;
+    }
+
+    public Event getEvent() {
+        return event;
+    }
+
+    public void setEvent(Event event) {
+        this.event = event;
+    }
+
+    public Page<Event> getEventPage() {
+        return eventPage;
+    }
+
+    public void setEventPage(Page<Event> eventPage) {
+        this.eventPage = eventPage;
     }
 }

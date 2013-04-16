@@ -19,37 +19,28 @@
 </HEAD>
 <BODY><BR>
 <h2>恋爱史分类管理页面</h2>
-
+<form action="loveStoryAction!addEventCategory" method="post">
+<TABLE class=tableborder cellSpacing=1 cellPadding=3 width="95%" align=center
+       border="1">
+    <tr><td colspan="4">恋爱史分类<input type="hidden" name="eventCategory.eventCategoryId" value="${eventCategory.eventCategoryId}"/></td></tr>
+    <tr>
+        <td>分类名称:</td>
+        <td><input type="text" name="eventCategory.eventCategoryName" value="${eventCategory.eventCategoryName}"></td>
+        <td>分类顺序:</td>
+        <td><input name="eventCategory.orderBy" type="text" value="${eventCategory.orderBy}"/></td>
+    </tr>
+    <tr><td colspan="2"><input type="submit" value="添加"/></td><td colspan="2"><input type="reset" value="清空"/></td></tr>
+</TABLE>
+</form>
+<br/><br/>
     <TABLE class=tableborder cellSpacing=1 cellPadding=3 width="95%" align=center
            border="1">
-        <tr><td colspan="6">现存文章</td></tr>
-        <tr><td>文章编号</td><td>文章名称</td><td>创建时间</td><td>关键字</td><td>上次修改时间</td><td>操作</td></tr>
-        <c:forEach items="${newsList.items}" var="news" varStatus="status">
-            <tr><td>${news.newsId}</td><td>${news.newsTitle}</td><td>${news.createDate}</td><td>${news.keyWords}</td><td>${news.lastModifyDate}</td><td><a href="newsAction!delNews?news.newsId=${news.newsId}">删除</a>&nbsp;&nbsp;<a href="newsAction!updateNews?news.newsId=${news.newsId}">更新</a></td></tr>
+        <tr><td colspan="5">现存事件分类</td></tr>
+        <tr><td>分类编号</td><td>分类名称</td><td>创建时间</td><td>顺序</td><td>操作</td></tr>
+        <c:forEach items="${eventCategoryList}" var="eventCategory" varStatus="status">
+            <tr><td>${eventCategory.eventCategoryId}</td><td>${eventCategory.eventCategoryName}</td><td>${eventCategory.createDate}</td><td>${eventCategory.orderBy}</td><td><a href="loveStoryAction!delEventCategory?eventCategory.eventCategoryId=${eventCategory.eventCategoryId}">删除</a>&nbsp;&nbsp;<a href="newsAction!updateNews?news.newsId=${news.newsId}">更新</a></td></tr>
         </c:forEach>
-        <tr> <td colspan="6" align="center">
-<pg:pager url="newsAction!listNews"
-          items="${newsList.total}" maxPageItems="10" maxIndexPages="5"
-          export="currentPageNumber=pageNumber">
-    <pg:prev>
-        <a href="${pageUrl }">上一页</a>
-    </pg:prev>
-    <pg:pages>
-        <c:choose>
-            <c:when test="${currentPageNumber eq pageNumber }">
-                <span style="width:8px;height:8px;border: 1px solid red;padding-right: 3px">${pageNumber }</span>
-            </c:when>
-            <c:otherwise>
-                <a style="display:inline;width:8px;height:8px;border:1px solid #ffffff;padding-right: 3px" href="${pageUrl }">${pageNumber }</a>
-            </c:otherwise>
-        </c:choose>
-    </pg:pages>
-    <pg:next>
-        <a href="${pageUrl }">下一页</a>
-    </pg:next>
-    当前:${currentPageNumber}/总共:${newsList.pageCount}
-    </pg:pager>
-        </td></tr>
+
     </TABLE>
 
 <BR>

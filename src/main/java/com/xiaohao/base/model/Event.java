@@ -21,6 +21,7 @@ public class Event extends BaseModel {
     private String eventDate;
     private Date createDate;
     private Integer importantFlag;
+    private String eventCategory;
     @Id
     @Column(name="eventId")
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -78,5 +79,13 @@ public class Event extends BaseModel {
 
     public void setImportantFlag(Integer importantFlag) {
         this.importantFlag = importantFlag;
+    }
+    @Transient
+    public String getEventCategory() {
+        return eventCategory;
+    }
+
+    public void setEventCategory(String eventCategory) {
+        this.eventCategory = eventCategory;
     }
 }
