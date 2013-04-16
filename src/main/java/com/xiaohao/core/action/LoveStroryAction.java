@@ -1,12 +1,18 @@
 package com.xiaohao.core.action;
 
 import com.xiaohao.base.action.BaseAction;
+import com.xiaohao.base.model.Event;
+import com.xiaohao.base.model.EventCategory;
+import com.xiaohao.core.service.EventService;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Actions;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -24,7 +30,12 @@ import org.springframework.stereotype.Controller;
         @Result(name = "list", type = "json", params = { "root", "entityListJson" }),
         @Result(name = "ajaxPromise", type = "json", params = { "root", "entityJson" }) }) })
 public class LoveStroryAction extends BaseAction {
+    @Autowired
+    EventService eventService;
     private String flag;
+    private List<EventCategory> eventCategoryList;
+    private EventCategory eventCategory;
+    private Event event;
     public String init(){
         flag="loveStory";
         return "init";
@@ -33,8 +44,38 @@ public class LoveStroryAction extends BaseAction {
     public String initAdminCategory(){
         return "initAdminCategory";
     }
+    //初始化分类管理
+    public String initAdminEvent(){
 
+        eventCategoryList =eventService.loadAllEvnetCategory();
+        return "initAdminEvent";
+    }
+    //
+    public String addEventCategory(){
+        eventService.addEventCate(eventCategory);
+        return "";
+    }
+    //
+    public String delEventCategory(){
+        if(eventCategory!=null&&eventCategory.getEventCategoryId()!=null){
+            eventService.delEventCate(eventCategory.getEventCategoryId());
+        }
+        return "";
+    }
+    //
+    public String addEvent(){
+        eventService.addEvent(event);
+        return "";
+    }
+    //
+    public String delEvent(){
+        if(event!=null&&event.getEventId()!=null){
+            eventService.delEvent(event.getEventId());
+        }
+        return "";
+    }
     public String historyList(){
+
         return "historyList";
     }
     public String getFlag() {
@@ -43,5 +84,21 @@ public class LoveStroryAction extends BaseAction {
 
     public void setFlag(String flag) {
         this.flag = flag;
+    }
+
+    public List<EventCategory> getEventCategoryList() {
+        return eventCategoryList;
+    }
+
+    public void setEventCategoryList(List<EventCategory> eventCategoryList) {
+        this.eventCategoryList = eventCategoryList;
+    }
+
+    public EventCategory getEventCategory() {
+        return eventCategory;
+    }
+
+    public void setEventCategory(EventCategory eventCategory) {
+        this.eventCategory = eventCategory;
     }
 }
