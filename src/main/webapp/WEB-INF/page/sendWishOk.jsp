@@ -23,9 +23,9 @@
     <div id="content">
       <div id="contact-page">
         <!-- The Contact Form -->
-        <h2 class="page-title">您的祝福已经发送成功</h2>
-        <p>您的电话和邮箱不会出现在页面上，只有小郝和小丽能看到,小郝和小丽谢谢您把美好的祝福送给我们~</p>
-        <p>点击下面的按钮，把祝福分享到社交媒体，告诉朋友们，一块来祝福小郝和小丽，谢谢</p>
+        <h2 class="page-title"><a href="#">您的祝福已经发送成功</a></h2>
+        <p><a href="#">您的电话和邮箱不会出现在页面上，只有小郝和小丽能看到,小郝和小丽谢谢您把美好的祝福送给我们~</a></p>
+        <p><a href="#">点击下面的按钮，把祝福分享到社交媒体，告诉朋友们，一块来祝福小郝和小丽，谢谢</a></p>
           <!-- JiaThis Button BEGIN -->
           <div class="jiathis_style_32x32">
               <a class="jiathis_button_qzone"></a>

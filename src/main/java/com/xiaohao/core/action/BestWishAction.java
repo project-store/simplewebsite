@@ -53,6 +53,8 @@ public class BestWishAction extends BaseAction {
             bestWishService.addBestWish(bestWish);
         }
         shareConfig = shareConfigService.loadShareConfig();
+        String summary =shareConfig.getSummary()+"   "+bestWish.getWishContent();
+        shareConfig.setSummary(summary);
         flag="sendWish";
         return "addBestWish";
     }
