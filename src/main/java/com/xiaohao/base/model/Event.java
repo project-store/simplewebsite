@@ -20,6 +20,7 @@ public class Event extends BaseModel {
     private String eventContent;
     private String eventDate;
     private Date createDate;
+    private Integer orderBy;
     private Integer importantFlag;
     private String eventCategory;
     @Id
@@ -87,5 +88,13 @@ public class Event extends BaseModel {
 
     public void setEventCategory(String eventCategory) {
         this.eventCategory = eventCategory;
+    }
+    @Column(name = "orderBy")
+    public Integer getOrderBy() {
+        return orderBy;
+    }
+
+    public void setOrderBy(Integer orderBy) {
+        this.orderBy = orderBy;
     }
 }
