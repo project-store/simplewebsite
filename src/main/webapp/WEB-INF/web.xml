@@ -61,18 +61,30 @@
                 bestWishAction!initAdmin
                 loveStoryAction!initAdminEvent
                 indexAction!indexPicAdmin
+                indexAction!indexPicAdmin
+                indexAction!addOrUpdateIndexPic
+                indexAction!updateIndexPic
                 randomWishAction!initAdd
                 randomWishAction!list
                 newsAction!initAdd
                 newsAction!listNews
-                shareConfigAction!saveOrUpdateConfig
+                newsAction!initAdd
+                newsAction!addNews
+                newsAction!updateNews
+                shareConfigAction
                 adminLoginAction!updateAdminPassWord
                 randomWishAction!delRandomWish
+                randomWishAction!initAdd
+                randomWishAction!addRandomWish
+                randomWishAction!initUpdate
                 newsAction!delNews
-                adminModelAction!delModel
+                adminModelAction
                 indexAction!delIndexPic
                 bestWishAction!delBestWish
                 bestWishAction!changeBestWishFlag
+                bestWishAction!initAdmin
+                AdminPageLeftAction
+
             </param-value>
         </init-param>
 	</filter>
