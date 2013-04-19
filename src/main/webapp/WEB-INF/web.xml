@@ -11,7 +11,7 @@
 		<param-value>classpath:applicationContext.xml</param-value>
 	</context-param>
 	
-	<!-- OpenSessionInView Filter -->
+	<!-- OpenSessionInView Filter spring  事务管理-->
 	<filter>
 		<filter-name>OpenSessionInViewFilter</filter-name>
 		<filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
@@ -50,17 +50,39 @@
         <filter-name>pageFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-	<!-- Struts Cleanup Filter -->
-	<!--<filter>-->
-		<!--<filter-name>struts-cleanup</filter-name>-->
-		<!--<filter-class>org.apache.struts2.dispatcher.ActionContextCleanUp</filter-class>-->
-	<!--</filter>-->
-	<!--<filter-mapping>-->
-		<!--<filter-name>struts-cleanup</filter-name>-->
-		<!--<url-pattern>/*</url-pattern>-->
-	<!--</filter-mapping>-->
+
+	<filter>
+		<filter-name>myFilter</filter-name>
+		<filter-class>com.xiaohao.base.util.MyFilter</filter-class>
+        <init-param>
+            <param-name>adminPath</param-name>
+            <param-value>
+                loveStoryAction!initAdminCategory
+                bestWishAction!initAdmin
+                loveStoryAction!initAdminEvent
+                indexAction!indexPicAdmin
+                randomWishAction!initAdd
+                randomWishAction!list
+                newsAction!initAdd
+                newsAction!listNews
+                shareConfigAction!saveOrUpdateConfig
+                adminLoginAction!updateAdminPassWord
+                randomWishAction!delRandomWish
+                newsAction!delNews
+                adminModelAction!delModel
+                indexAction!delIndexPic
+                bestWishAction!delBestWish
+                bestWishAction!changeBestWishFlag
+            </param-value>
+        </init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>myFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 	
 	<!-- Struts2 Filter -->
+
 	<filter>
 		<filter-name>struts2</filter-name>
 		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>

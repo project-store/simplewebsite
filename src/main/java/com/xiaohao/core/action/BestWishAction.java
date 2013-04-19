@@ -13,6 +13,7 @@ import org.apache.struts2.convention.annotation.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.util.HtmlUtils;
 
 import java.util.Date;
 
@@ -37,6 +38,7 @@ public class BestWishAction extends BaseAction {
     private BestWish bestWish;
     private Page<BestWish> bestWishPage;
     private ShareConfig shareConfig;
+    private String summary;
     @Autowired
     BestWishService bestWishService;
     @Autowired
@@ -48,13 +50,24 @@ public class BestWishAction extends BaseAction {
     }
     public String addBestWish(){
         if(bestWish!=null){
+            if(bestWish.getWishContent()!=null){
+                bestWish.setWishContent(HtmlUtils.htmlEscape(bestWish.getWishContent()));
+            }
+            if(bestWish.getEmail()!=null){
+                bestWish.setEmail(HtmlUtils.htmlEscape(bestWish.getEmail()));
+            }
+            if(bestWish.getMobile()!=null){
+                bestWish.setMobile(HtmlUtils.htmlEscape(bestWish.getMobile()));
+            }
+            if(bestWish.getSendUserName()!=null){
+                bestWish.setSendUserName(HtmlUtils.htmlEscape(bestWish.getSendUserName()));
+            }
             bestWish.setCreateDate(new Date());
             bestWish.setViewFlag(1);
             bestWishService.addBestWish(bestWish);
         }
         shareConfig = shareConfigService.loadShareConfig();
-        String summary =shareConfig.getSummary()+"   "+bestWish.getWishContent();
-        shareConfig.setSummary(summary);
+        summary =shareConfig.getSummary()+"   "+bestWish.getWishContent();
         flag="sendWish";
         return "addBestWish";
     }
@@ -115,5 +128,13 @@ public class BestWishAction extends BaseAction {
 
     public void setShareConfig(ShareConfig shareConfig) {
         this.shareConfig = shareConfig;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 }

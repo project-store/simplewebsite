@@ -1,7 +1,11 @@
 package com.xiaohao.base.util;
 
+import com.xiaohao.base.model.AdminUser;
+
 import javax.servlet.*;
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,11 +21,25 @@ public class MyFilter implements Filter {
     public void init(FilterConfig filterConfig) throws ServletException {
         String pathes = filterConfig.getInitParameter("adminPath");
         adminPath = pathes.split("\n");
+        for (int i = 0; i < adminPath.length; i++) {
+            adminPath[i] = adminPath[i].trim();
+        }
     }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-       chain.doFilter(request,response);
+        HttpServletRequest req = (HttpServletRequest) request;
+        String url = req.getRequestURL().toString();
+        for (int i = 0; i < adminPath.length; i++) {
+            if (url.indexOf(adminPath[i]) > 0) {
+                Object adminUser = req.getSession().getAttribute("adminUser");
+                if (adminUser == null) {
+                    req.getRequestDispatcher("/index.jsp").forward(req, response);
+                    return;
+                }
+            }
+        }
+        chain.doFilter(request, response);
     }
 
     @Override

@@ -31,6 +31,7 @@ import java.util.List;
         @Result(name = "historyList", location = "/WEB-INF/page/historyList.jsp"),
         @Result(name = "initAdminCategory", location = "/WEB-INF/admin/innerpage/EventCateAdmin.jsp"),
         @Result(name = "initAdminEvent", location = "/WEB-INF/admin/innerpage/EventAdmin.jsp"),
+        @Result(name = "addEvent", location = "/WEB-INF/admin/innerpage/addEvent.jsp"),
         @Result(name = "list", type = "json", params = { "root", "entityListJson" }),
         @Result(name = "ajaxPromise", type = "json", params = { "root", "entityJson" }) }) })
 public class LoveStroryAction extends BaseAction {
@@ -75,7 +76,8 @@ public class LoveStroryAction extends BaseAction {
     //
     public String addEvent(){
         eventService.addEvent(event);
-        return "";
+        event=null;
+        return "addEvent";
     }
     //
     public String delEvent(){
