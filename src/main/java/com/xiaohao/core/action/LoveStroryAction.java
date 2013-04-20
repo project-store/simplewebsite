@@ -13,7 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+import javax.swing.*;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -30,6 +32,7 @@ import java.util.List;
         @Result(name = "init", location = "/WEB-INF/page/lovestory.jsp"),
         @Result(name = "historyList", location = "/WEB-INF/page/historyList.jsp"),
         @Result(name = "initAdminCategory", location = "/WEB-INF/admin/innerpage/EventCateAdmin.jsp"),
+        @Result(name = "delEvent", location = "/loveStoryAction!initAdminEvent",type = "redirect"),
         @Result(name = "initAdminEvent", location = "/WEB-INF/admin/innerpage/EventAdmin.jsp"),
         @Result(name = "addEvent", location = "/WEB-INF/admin/innerpage/addEvent.jsp"),
         @Result(name = "list", type = "json", params = { "root", "entityListJson" }),
@@ -54,14 +57,31 @@ public class LoveStroryAction extends BaseAction {
     //初始化事件管理
     public String initAdminEvent(){
         eventPage =eventService.loadAllEvent();
+        eventCategoryList = eventService.loadAllEvnetCategory();
+        HashMap<Long,EventCategory> cateMap = new HashMap<Long, EventCategory>();
+        for(int i=0;i<eventCategoryList.size();i++){
+            cateMap.put(eventCategoryList.get(i).getEventCategoryId(),eventCategoryList.get(i));
+        }
+        List<Event> eventList = eventPage.getItems();
+        for(int i=0;i<eventList.size();i++){
+            Event e =eventList.get(i);
+            EventCategory c = cateMap.get(e.getEventCategoryId());
+            e.setEventCategory(c.getEventCategoryName());
+        }
         return "initAdminEvent";
     }
     //
     public String addEventCategory(){
         if(eventCategory!=null){
-            eventCategory.setCreateDate(new Date());
+            if(eventCategory.getEventCategoryId()!=null){
+                eventService.updateEventCate(eventCategory);
+            }else {
+
+                eventCategory.setCreateDate(new Date());
+                eventService.addEventCate(eventCategory);
+            }
         }
-        eventService.addEventCate(eventCategory);
+
         eventCategoryList =eventService.loadAllEvnetCategory();
         return "initAdminCategory";
     }
@@ -73,9 +93,27 @@ public class LoveStroryAction extends BaseAction {
         eventCategoryList =eventService.loadAllEvnetCategory();
         return "initAdminCategory";
     }
+    public String updateCategory(){
+       if(eventCategory!=null&&eventCategory.getEventCategoryId()!=null){
+           eventCategory = eventService.findCategoryById(eventCategory.getEventCategoryId());
+       }
+        eventCategoryList =eventService.loadAllEvnetCategory();
+       return "initAdminCategory";
+    }
     //
     public String addEvent(){
-        eventService.addEvent(event);
+        eventCategoryList = eventService.loadAllEvnetCategory();
+        if(event!=null){
+            if(event.getEventId()!=null){
+
+                eventService.updateEvnet(event);
+            }else {
+                event.setCreateDate(new Date());
+
+                eventService.addEvent(event);
+
+            }
+        }
         event=null;
         return "addEvent";
     }
@@ -84,10 +122,23 @@ public class LoveStroryAction extends BaseAction {
         if(event!=null&&event.getEventId()!=null){
             eventService.delEvent(event.getEventId());
         }
-        return "";
+
+        return "delEvent";
+    }
+    public String updateEvent(){
+        if(event!=null&&event.getEventId()!=null){
+            event = eventService.findEvent(event.getEventId());
+        }
+        eventCategoryList = eventService.loadAllEvnetCategory();
+        return "addEvent";
     }
     public String historyList(){
-
+        eventCategoryList = eventService.loadAllEvnetCategory();
+        for(int i=0;i<eventCategoryList.size();i++){
+            EventCategory cate =eventCategoryList.get(i);
+            List events = eventService.loadAllEventByCateId(cate.getEventCategoryId());
+            cate.setEventList(events);
+        }
         return "historyList";
     }
     public String getFlag() {

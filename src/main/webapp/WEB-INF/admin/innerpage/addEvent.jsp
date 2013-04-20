@@ -19,16 +19,32 @@
 </HEAD>
 <BODY><BR>
 <h2>事件模块</h2>
-
+    <form action="loveStoryAction!addEvent" method="post">
     <TABLE class=tableborder cellSpacing=1 cellPadding=3 width="95%" align=center
            border="1">
-        <tr><td colspan="6">现存事件</td></tr>
-        <tr><td>事件编号</td><td>事件名称</td><td>事件分类</td><td>事件内容</td><td>事件日期</td><td>创建日期</td><td>重要标志</td><td>操作</td></tr>
-        <c:forEach items="${eventPage.items}" var="event" varStatus="status">
-            <tr><td>${event.eventId}</td><td>${event.newsTitle}</td><td>${event.eventCategory}</td><td>${event.eventContent}</td><td>${event.eventDate}</td><td>${event.createDate}</td><td><a href="newsAction!delNews?news.newsId=${news.newsId}">删除</a>&nbsp;&nbsp;<a href="newsAction!updateNews?news.newsId=${news.newsId}">更新</a></td></tr>
-        </c:forEach>
-    </TABLE>
+        <tr><td colspan="10">添加事件<input value="${event.eventId}" type="" name="event.eventId"></td></tr>
+        <tr>
+            <td>事件名称</td><td><input type="text" value="${event.eventTitle}" name="event.eventTitle"/></td>
+            <td>事件分类</td>
+                <td><select name="event.eventCategoryId">
+                    <c:forEach var="eventCategory" items="${eventCategoryList}" varStatus="status">
+                    <option <c:if test="${eventCategory.eventCategoryId eq event.eventCategoryId}">selected="true"</c:if> value="${eventCategory.eventCategoryId}">${eventCategory.eventCategoryName}</option>
+                    </c:forEach>
+                </select></td>
 
+            <td>事件日期</td><td><input type="text" value="${event.eventDate}" name="event.eventDate"/></td>
+            <td>重要标志</td>
+            <td>
+                <select name="event.importantFlag"><option <c:if test="${event.importantFlag eq 0}">selected="true" </c:if> value="0">否</option><option <c:if test="${event.importantFlag eq 1}">selected="true"</c:if> value="1">是</option></select>
+            </td>
+            <td>顺序</td><td><input type="text" name="event.orderBy" value="${event.orderBy}"/></td>
+        </tr>
+        <tr>
+            <td colspan="2">事件内容</td><td colspan="8"><textarea rows="10" cols="60" name="event.eventContent">${event.eventContent}</textarea></td>
+        </tr>
+        <tr><td colspan="5"><input type="submit" value="提交"></td><td colspan="5"><input type="reset" value="清空"></td></tr>
+    </TABLE>
+    </form>
 <BR>
 
 <BR>

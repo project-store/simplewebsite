@@ -4,6 +4,7 @@ import com.xiaohao.base.dao.impl.GenericDAOHibernateImpl;
 import com.xiaohao.base.model.Event;
 import com.xiaohao.core.dao.EventDAO;
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
@@ -23,7 +24,14 @@ public class EventDAOImpl extends GenericDAOHibernateImpl<Event,Long> implements
     public List<Event> loadAllEventByCateId(Long cateId) {
         Criteria criteria = this.createCriteria();
         criteria.add(Restrictions.eq("eventCategoryId",cateId));
-        criteria.addOrder(Order.desc("createDate"));
+        criteria.addOrder(Order.asc("orderBy"));
         return criteria.list();
+    }
+
+    @Override
+    public void deleteEventByCategoryId(Long categoryId) {
+        Query query= this.getSession().createQuery("delete Event e where e.eventCategoryId =:IDD");
+        query.setLong("IDD",categoryId);
+        query.executeUpdate();
     }
 }

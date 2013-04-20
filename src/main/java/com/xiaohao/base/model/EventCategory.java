@@ -2,6 +2,7 @@ package com.xiaohao.base.model;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,9 +15,11 @@ import java.util.Date;
 @Table(name="eventCategory")
 public class EventCategory extends BaseModel {
     private Long eventCategoryId;
-    private Long eventCategoryName;
+    private String eventCategoryName;
     private Date createDate;
     private Integer orderBy;
+    @Transient
+    private List<Event> eventList;
     @Id
     @Column(name="eventCategoryId")
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -28,11 +31,11 @@ public class EventCategory extends BaseModel {
         this.eventCategoryId = eventCategoryId;
     }
     @Column(name="eventCategoryName")
-    public Long getEventCategoryName() {
+    public String getEventCategoryName() {
         return eventCategoryName;
     }
 
-    public void setEventCategoryName(Long eventCategoryName) {
+    public void setEventCategoryName(String eventCategoryName) {
         this.eventCategoryName = eventCategoryName;
     }
     @Column(name="createDate")
@@ -50,5 +53,13 @@ public class EventCategory extends BaseModel {
 
     public void setOrderBy(Integer orderBy) {
         this.orderBy = orderBy;
+    }
+    @Transient
+    public List<Event> getEventList() {
+        return eventList;
+    }
+
+    public void setEventList(List<Event> eventList) {
+        this.eventList = eventList;
     }
 }

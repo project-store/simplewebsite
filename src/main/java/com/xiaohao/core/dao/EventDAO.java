@@ -14,4 +14,5 @@ import java.util.List;
  */
 public interface EventDAO extends GenericDAO<Event,Long> {
     public List<Event> loadAllEventByCateId(Long cateId);
+    public void deleteEventByCategoryId(Long categoryId);
 }

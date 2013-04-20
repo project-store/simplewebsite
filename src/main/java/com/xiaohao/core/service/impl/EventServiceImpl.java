@@ -49,7 +49,7 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public List<EventCategory> loadAllEvnetCategory() {
-       return eventCategoryDAO.loadAll();
+       return eventCategoryDAO.find("select t from EventCategory t order By t.orderBy asc");
     }
 
     @Override
@@ -60,6 +60,7 @@ public class EventServiceImpl implements EventService {
     @Override
     public void delEventCate(Long eventCateId) {
         eventCategoryDAO.deleteByKey(eventCateId);
+        eventDAO.deleteEventByCategoryId(eventCateId);
     }
 
     @Override
@@ -69,6 +70,14 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public Page<Event> loadAllEvent() {
-        return eventDAO.queryForpage("select t from Event t order by t.createDate");
+        return eventDAO.queryForpage("select t from Event t order by t.eventCategoryId");
+    }
+    public EventCategory findCategoryById(Long categoryId){
+        return eventCategoryDAO.get(categoryId);
+    }
+
+    @Override
+    public Event findEvent(Long eventId) {
+        return eventDAO.get(eventId);
     }
 }

@@ -38,7 +38,7 @@
         <tr><td colspan="5">现存事件分类</td></tr>
         <tr><td>分类编号</td><td>分类名称</td><td>创建时间</td><td>顺序</td><td>操作</td></tr>
         <c:forEach items="${eventCategoryList}" var="eventCategory" varStatus="status">
-            <tr><td>${eventCategory.eventCategoryId}</td><td>${eventCategory.eventCategoryName}</td><td>${eventCategory.createDate}</td><td>${eventCategory.orderBy}</td><td><a href="loveStoryAction!delEventCategory?eventCategory.eventCategoryId=${eventCategory.eventCategoryId}">删除</a>&nbsp;&nbsp;<a href="newsAction!updateNews?news.newsId=${news.newsId}">更新</a></td></tr>
+            <tr><td>${eventCategory.eventCategoryId}</td><td>${eventCategory.eventCategoryName}</td><td>${eventCategory.createDate}</td><td>${eventCategory.orderBy}</td><td><a href="loveStoryAction!delEventCategory?eventCategory.eventCategoryId=${eventCategory.eventCategoryId}">删除</a>&nbsp;&nbsp;<a href="loveStoryAction!updateCategory?eventCategory.eventCategoryId=${eventCategory.eventCategoryId}">更新</a></td></tr>
         </c:forEach>
 
     </TABLE>

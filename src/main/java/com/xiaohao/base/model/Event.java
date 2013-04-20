@@ -22,6 +22,7 @@ public class Event extends BaseModel {
     private Date createDate;
     private Integer orderBy;
     private Integer importantFlag;
+    @Transient
     private String eventCategory;
     @Id
     @Column(name="eventId")
