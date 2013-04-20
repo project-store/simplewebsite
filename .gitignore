@@ -9,3 +9,4 @@ simplewebsite.iml
 /.idea/artifacts/simplewebsite_war.xml
 /.idea/artifacts/*.xml
 
+/*.log
