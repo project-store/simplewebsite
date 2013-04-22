@@ -9,9 +9,10 @@
 <%@include file="../common/taglibs.jsp"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
 <div id="header">
-    <div class="logo"><a href="#"><img src="images/name.png" alt="" /></a></div>
-    <!--end logo-->
-    <div class="subtitle"><img src="images/subtitle.png" alt="" /></div>
+    <img width="960px" height="160px" src="images/header.jpg">
+    <%--<div class="logo"><a href="#"><img src="images/name.png" alt="" /></a></div>--%>
+    <%--<!--end logo-->--%>
+    <%--<div class="subtitle"><img src="images/subtitle.png" alt="" /></div>--%>
     <!--end subtitle-->
     <div id="nav">
         <ul id="nav-pages">
