@@ -84,7 +84,7 @@
                 bestWishAction!changeBestWishFlag
                 bestWishAction!initAdmin
                 AdminPageLeftAction
-
+                loveStoryAction!addEvent
             </param-value>
         </init-param>
 	</filter>

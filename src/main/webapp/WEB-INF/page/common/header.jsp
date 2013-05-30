@@ -22,6 +22,7 @@
             <li><a href="newsAction!init" <c:if test="${flag eq 'news'}">class="current"</c:if>>结婚动态</a><span>~</span></li>
             <li><a href="bestWishAction!init" <c:if test="${flag eq 'wishes'}">class="current"</c:if>>祝福</a><span>~</span></li>
             <li><a href="sendMyWishAction!init" <c:if test="${flag eq 'sendWish'}">class="current"</c:if>>送祝福</a></li>
+            <li><a href="sendMyWishAction!init" <c:if test="${flag eq 'sendWish'}">class="current"</c:if>>掏份子钱</a></li>
         </ul>
         <!--end nav-pages-->
     </div>
