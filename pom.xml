@@ -330,6 +330,11 @@
             <artifactId>json_simple</artifactId>
             <version>r1</version>
         </dependency>
+        <dependency>
+            <groupId>sae</groupId>
+            <artifactId>sae-local</artifactId>
+            <version>1.0.0</version>
+        </dependency>
 	</dependencies>
 
 
