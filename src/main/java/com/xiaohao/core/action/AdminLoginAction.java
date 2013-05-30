@@ -62,9 +62,10 @@ public class AdminLoginAction extends BaseAction {
                 return "login";
             }else {
                 this.httpSession.setAttribute("adminUser",adminUser);
+                return "admin";
             }
         }
-        return "admin";
+        return "login";
     }
     public String loginOut(){
         this.httpSession.setAttribute("adminUser",null);
