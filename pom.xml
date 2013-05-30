@@ -315,7 +315,24 @@
             <artifactId>commons-httpclient</artifactId>
             <version>3.1</version>
         </dependency>
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>caja</groupId>
+            <artifactId>json_simple</artifactId>
+            <version>r1</version>
+        </dependency>
 	</dependencies>
+
+
 	<properties>
         <repos.root.url>http://192.168.6.115/nexus</repos.root.url>
 		<struts.version>2.3.1.2</struts.version>
