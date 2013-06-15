@@ -8,35 +8,35 @@ package com.xiaohao.base.action;
  * To change this template use File | Settings | File Templates.
  */
 public class WeChatReplyTextMessage {
-    private String ToUserName;
-    private String FromUserName;
-    private String CreateTime;
+    private String toUserName;
+    private String fromUserName;
+    private String createTime;
     private String messageType;
-    private String Content;
-    private String FuncFlag;
+    private String content;
+    private String funcFlag;
 
     public String getToUserName() {
-        return ToUserName;
+        return toUserName;
     }
 
     public void setToUserName(String toUserName) {
-        ToUserName = toUserName;
+        this.toUserName = toUserName;
     }
 
     public String getFromUserName() {
-        return FromUserName;
+        return fromUserName;
     }
 
     public void setFromUserName(String fromUserName) {
-        FromUserName = fromUserName;
+        this.fromUserName = fromUserName;
     }
 
     public String getCreateTime() {
-        return CreateTime;
+        return createTime;
     }
 
     public void setCreateTime(String createTime) {
-        CreateTime = createTime;
+        this.createTime = createTime;
     }
 
     public String getMessageType() {
@@ -48,18 +48,18 @@ public class WeChatReplyTextMessage {
     }
 
     public String getContent() {
-        return Content;
+        return content;
     }
 
     public void setContent(String content) {
-        Content = content;
+        this.content = content;
     }
 
     public String getFuncFlag() {
-        return FuncFlag;
+        return funcFlag;
     }
 
     public void setFuncFlag(String funcFlag) {
-        FuncFlag = funcFlag;
+        this.funcFlag = funcFlag;
     }
 }
