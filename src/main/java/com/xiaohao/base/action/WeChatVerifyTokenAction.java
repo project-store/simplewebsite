@@ -1,9 +1,8 @@
 package com.xiaohao.base.action;
-import com.xiaohao.base.util.SHA1;
-import org.apache.commons.httpclient.*;
-import org.apache.commons.httpclient.auth.AuthState;
-import org.apache.commons.httpclient.methods.GetMethod;
-import org.apache.commons.httpclient.params.HttpMethodParams;
+
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.DomDriver;
+import org.apache.commons.io.IOUtils;
 import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Actions;
@@ -13,12 +12,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
+import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -39,7 +34,26 @@ public class WeChatVerifyTokenAction extends BaseAction {
         String requestType = ServletActionContext.getRequest().getMethod();
         if (requestType != null) {
             if ("POST".equals(requestType)) {
-
+                httpServletResponse.setContentType("text/html;charset=UTF-8");
+                PrintWriter pw = httpServletResponse.getWriter();
+                String wxMsgXml = IOUtils.toString(httpServletRequest.getInputStream(), "utf-8");
+                WeChatTextMessage textMsg = null;
+                try {
+                    textMsg = getWeChatTextMessage(wxMsgXml);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                StringBuffer replyMsg = new StringBuffer();
+                if(textMsg != null){
+                    //增加你所需要的处理逻辑，这里只是简单重复消息
+                    replyMsg.append("您给我的消息是：");
+                    replyMsg.append(textMsg.getContent());
+                }
+                else{
+                    replyMsg.append("我的智商暂时看不懂非文本消息");
+                }
+                String returnXml = getReplyTextMessage(replyMsg.toString(), textMsg.getFromUserName());
+                pw.println(returnXml);
             } else if ("GET".equals(requestType)) {
                 String echostr = httpServletRequest.getParameter("echostr");
 //                String timestamp = httpServletRequest.getParameter("timestamp");
@@ -72,4 +86,36 @@ public class WeChatVerifyTokenAction extends BaseAction {
         return null;
     }
 
+    private WeChatTextMessage getWeChatTextMessage(String xml){
+        XStream xstream = new XStream(new DomDriver());
+        xstream.alias("xml", WeChatTextMessage.class);
+        xstream.aliasField("ToUserName", WeChatTextMessage.class, "toUserName");
+        xstream.aliasField("FromUserName", WeChatTextMessage.class, "fromUserName");
+        xstream.aliasField("CreateTime", WeChatTextMessage.class, "createTime");
+        xstream.aliasField("MsgType", WeChatTextMessage.class, "messageType");
+        xstream.aliasField("Content", WeChatTextMessage.class, "content");
+        xstream.aliasField("MsgId", WeChatTextMessage.class, "msgId");
+        WeChatTextMessage wechatTextMessage = (WeChatTextMessage)xstream.fromXML(xml);
+        return wechatTextMessage;
+    }
+
+    private String getReplyTextMessage(String content, String weChatUser){
+        WeChatReplyTextMessage we = new WeChatReplyTextMessage();
+        we.setMessageType("text");
+        we.setFuncFlag("0");
+        we.setCreateTime(new Long(new Date().getTime()).toString());
+        we.setContent(content);
+        we.setToUserName(weChatUser);
+        we.setFromUserName("shanghaiweather");//TODO 你的公众帐号微信号
+        XStream xstream = new XStream(new DomDriver());
+        xstream.alias("xml", WeChatReplyTextMessage.class);
+        xstream.aliasField("ToUserName", WeChatReplyTextMessage.class, "toUserName");
+        xstream.aliasField("FromUserName", WeChatReplyTextMessage.class, "fromUserName");
+        xstream.aliasField("CreateTime", WeChatReplyTextMessage.class, "createTime");
+        xstream.aliasField("MsgType", WeChatReplyTextMessage.class, "messageType");
+        xstream.aliasField("Content", WeChatReplyTextMessage.class, "content");
+        xstream.aliasField("FuncFlag", WeChatReplyTextMessage.class, "funcFlag");
+        String xml =xstream.toXML(we);
+        return xml;
+    }
 }

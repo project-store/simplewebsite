@@ -325,15 +325,30 @@
             <artifactId>commons-io</artifactId>
             <version>1.4</version>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>caja</groupId>-->
+            <!--<artifactId>json_simple</artifactId>-->
+            <!--<version>r1</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>sae</groupId>-->
+            <!--<artifactId>sae-local</artifactId>-->
+            <!--<version>1.0.0</version>-->
+        <!--</dependency>-->
         <dependency>
-            <groupId>caja</groupId>
-            <artifactId>json_simple</artifactId>
-            <version>r1</version>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.2</version>
         </dependency>
         <dependency>
-            <groupId>sae</groupId>
-            <artifactId>sae-local</artifactId>
-            <version>1.0.0</version>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.thoughtworks.xstream</groupId>
+            <artifactId>xstream</artifactId>
+            <version>1.4.3</version>
         </dependency>
 	</dependencies>
 
@@ -345,30 +360,30 @@
 		<spring.version>3.1.0.RELEASE</spring.version>
 	</properties>
     <distributionManagement>
-        <repository>
-            <id>vansky-nexus</id>
-            <name>Nexus Release Repository</name>
-            <url>${repos.root.url}/content/repositories/releases</url>
-        </repository>
-        <snapshotRepository>
-            <id>vansky-nexus</id>
-            <name>Nexus Snapshot Repository</name>
-            <url>${repos.root.url}/content/repositories/snapshots</url>
-        </snapshotRepository>
+        <!--<repository>-->
+            <!--<id>vansky-nexus</id>-->
+            <!--<name>Nexus Release Repository</name>-->
+            <!--<url>${repos.root.url}/content/repositories/releases</url>-->
+        <!--</repository>-->
+        <!--<snapshotRepository>-->
+            <!--<id>vansky-nexus</id>-->
+            <!--<name>Nexus Snapshot Repository</name>-->
+            <!--<url>${repos.root.url}/content/repositories/snapshots</url>-->
+        <!--</snapshotRepository>-->
     </distributionManagement>
 
     <repositories>
-        <repository>
-            <id>vansky-nexus</id>
-            <name>Vansky Nexus Public Repository Group</name>
-            <url>${repos.root.url}/content/groups/public</url>
-        </repository>
+        <!--<repository>-->
+            <!--<id>vansky-nexus</id>-->
+            <!--<name>Vansky Nexus Public Repository Group</name>-->
+            <!--<url>${repos.root.url}/content/groups/public</url>-->
+        <!--</repository>-->
     </repositories>
     <pluginRepositories>
-        <pluginRepository>
-            <id>vansky-nexus</id>
-            <name>Vansky Nexus Public Repository Group</name>
-            <url>${repos.root.url}/content/groups/public</url>
-        </pluginRepository>
+        <!--<pluginRepository>-->
+            <!--<id>vansky-nexus</id>-->
+            <!--<name>Vansky Nexus Public Repository Group</name>-->
+            <!--<url>${repos.root.url}/content/groups/public</url>-->
+        <!--</pluginRepository>-->
     </pluginRepositories>
 </project>
