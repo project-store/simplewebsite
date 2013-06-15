@@ -106,7 +106,7 @@ public class WeChatVerifyTokenAction extends BaseAction {
         we.setCreateTime(new Long(new Date().getTime()).toString());
         we.setContent(content);
         we.setToUserName(weChatUser);
-        we.setFromUserName("shanghaiweather");//TODO 你的公众帐号微信号
+        we.setFromUserName("xiaohaolxiaoli");//TODO 你的公众帐号微信号
         XStream xstream = new XStream(new DomDriver());
         xstream.alias("xml", WeChatReplyTextMessage.class);
         xstream.aliasField("ToUserName", WeChatReplyTextMessage.class, "toUserName");
